@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Infrigidate Engineers</title>
-<meta name="description" content="Infrigidate Engineers India Pvt. Ltd. — ISO 9001, 14001 and 45001 certified HVAC and integrated MEP contractor for pharmaceutical, healthcare and industrial facilities. Offices in Pune and Indore.">
+<meta name="description" content="Infrigidate Engineers India Pvt. Ltd. — ISO 9001, 14001 and 45001 certified HVAC and integrated MEP contractor for pharmaceutical, healthcare and industrial facilities. Free duct sizing, pipe sizing and heat load calculators.">
 <link rel="icon" type="image/png" href="img/infrigidate-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -333,21 +333,131 @@ header.site .logo img{height:clamp(24px,3.2vw,38px);width:auto;max-width:min(340
 header.site .wrap{min-height:84px}
 .hero-logo{height:auto;width:min(440px,100%);margin-bottom:6px}
 footer .logo img{height:32px;width:auto;max-width:100%}
+
+/* header CTA stays on one line */
+header .cta{white-space:nowrap}
+nav.main a{padding-inline:10px}
+/* ===== Engineering tools ===== */
+.ttabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:28px;overflow-x:auto}
+.ttabs button{font:600 1rem/1.2 var(--body);color:var(--steel);background:none;border:0;border-bottom:3px solid transparent;padding:14px 22px 12px;cursor:pointer;display:flex;gap:10px;align-items:baseline;white-space:nowrap}
+.ttabs button:hover{color:var(--brand)}
+.ttabs button[aria-selected="true"]{color:var(--brand);border-bottom-color:var(--brand)}
+.tnum{font:500 .75rem/1 var(--mono);color:var(--signal)}
+.tgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start}
+@media (max-width:880px){.tgrid{grid-template-columns:1fr}}
+.calc{display:grid;gap:16px;background:var(--frost);border:1px solid var(--line);padding:clamp(20px,3vw,30px)}
+.calc h3{font-size:1.4rem}
+.calc .hint{color:var(--steel);font-size:.92rem;margin-top:-8px}
+.calc label{display:grid;gap:6px;font:500 .84rem/1.2 var(--body);color:var(--steel);min-width:0}
+.calc input,.calc select{font:500 1rem/1.3 var(--body);padding:11px 12px;border:1px solid #c6d2db;background:#fff;color:var(--ink);width:100%;min-width:0;font-variant-numeric:tabular-nums}
+.calc input:focus,.calc select:focus{outline:2px solid var(--signal);outline-offset:0;border-color:var(--signal)}
+.calc small{font:400 .76rem/1.4 var(--mono);color:var(--steel)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg{border:0;padding:0;margin:0;display:flex;gap:0;flex-wrap:wrap}
+.seg legend{font:500 .84rem/1.2 var(--body);color:var(--steel);margin-bottom:6px;padding:0}
+.seg label{display:block}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg span{display:block;padding:10px 16px;border:1px solid #c6d2db;background:#fff;color:var(--ink);font:600 .9rem/1 var(--body);cursor:pointer}
+.seg label+label span{border-left:0}
+.seg input:checked+span{background:var(--brand);border-color:var(--brand);color:#fff}
+.seg input:focus-visible+span{outline:3px solid var(--signal);outline-offset:2px}
+.adv{border-top:1px solid var(--line);padding-top:12px}
+.adv summary{cursor:pointer;font:600 .9rem/1.3 var(--body);color:var(--brand)}
+.adv[open]{display:grid;gap:14px}
+.adv[open] summary{margin-bottom:2px}
+.res{border:1px solid var(--line);border-top:3px solid var(--brand);background:#fff;padding:clamp(20px,3vw,30px);min-width:0}
+.res-head{font:500 .74rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-2);margin-bottom:10px}
+.big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.big b{font:750 clamp(2.4rem,5vw,3.4rem)/1 var(--display);font-stretch:85%;color:var(--brand);font-variant-numeric:tabular-nums}
+.big span{font:500 .95rem/1.3 var(--mono);color:var(--steel)}
+.big.sm b{font-size:clamp(1.6rem,3vw,2.1rem)}
+.kv{display:grid;grid-template-columns:auto 1fr;margin:0;border-top:1px solid var(--line)}
+.kv dt,.kv dd{margin:0;padding:10px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.kv dt{color:var(--steel);font-size:.9rem;padding-right:18px}
+.kv dd{text-align:right;font:500 .95rem/1.4 var(--mono);color:var(--ink)}
+.chip{display:inline-block;margin-top:12px;font:600 .8rem/1.2 var(--body);padding:7px 11px;background:var(--ice);color:var(--brand)}
+.chip.warn{background:#fff4e0;color:#8a5300}
+.chip.ok{background:#e6f4ec;color:#1d6b42}
+.tscroll{overflow-x:auto;margin-top:12px}
+.tt{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}
+.tt th{font:500 .72rem/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--steel);text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+.tt td{padding:9px 8px 9px 0;border-bottom:1px solid var(--line);white-space:nowrap;font-family:var(--mono);font-size:.84rem}
+.tt tr.sel td{color:var(--brand);font-weight:600;background:var(--ice)}
+.tt tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--brand);padding-left:8px}
+.tt td.flag{color:#8a5300}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:110px 1fr 64px;gap:10px;align-items:center;font-size:.88rem}
+.bar span:first-child{color:var(--ink)}
+.bar i{display:block;height:10px;background:var(--brand);min-width:2px}
+.bar i.l{background:var(--signal)}
+.bar b{font:500 .82rem/1 var(--mono);text-align:right;color:var(--steel);font-variant-numeric:tabular-nums}
+.tnote{margin-top:18px;font-size:.84rem;color:var(--steel);max-width:90ch}
+.tcta{margin-top:44px;padding:28px clamp(20px,3vw,32px);background:var(--ice);border:1px solid var(--line);display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.tcta h3{font-size:1.35rem;margin-bottom:6px}
+.tcta p{color:var(--steel);max-width:62ch}
+
+/* ===== Client appreciation letters ===== */
+#appreciation{scroll-margin-top:84px}
+.pull{margin:0 0 34px;max-width:900px;font:600 clamp(1.15rem,2vw,1.45rem)/1.45 var(--display);font-stretch:95%;color:var(--brand);border-left:3px solid var(--signal);padding-left:22px}
+.pull cite{display:block;margin-top:10px;font:400 .8rem/1.4 var(--mono);font-style:normal;color:var(--steel);letter-spacing:.04em}
+.lgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media (max-width:1000px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.lgrid{grid-template-columns:1fr}}
+.lcard{display:grid;grid-template-rows:auto 1fr;background:#fff;border:1px solid var(--line);text-align:left;padding:0;cursor:pointer;font:inherit;color:inherit;transition:border-color .2s,transform .2s}
+.lcard:hover{border-color:var(--brand-2);transform:translateY(-3px)}
+.lcard .doc{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:var(--frost);border-bottom:1px solid var(--line)}
+.lcard .doc img{width:100%;height:auto;display:block;object-fit:cover;object-position:top}
+.lcard .doc::after{content:"View letter";position:absolute;right:10px;bottom:10px;font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--brand);color:#fff;padding:7px 9px}
+.lcard .b{padding:16px 18px 18px;display:grid;gap:6px;align-content:start}
+.lcard .cl{font:650 1.05rem/1.25 var(--display);color:var(--brand)}
+.lcard .pr{font-size:.9rem;color:var(--ink)}
+.lcard .sc{font-size:.84rem;color:var(--steel)}
+.lcard time{font:500 .74rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brand-2);margin-top:4px}
+.lbox{padding:0;border:0;max-width:min(860px,94vw);width:100%;max-height:94vh;background:#fff;color:var(--ink)}
+.lbox::backdrop{background:rgba(0,30,50,.72)}
+.lbox-bar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px 10px 18px;background:var(--brand);color:#fff;font:600 .92rem/1.3 var(--body)}
+.lbox-btns{display:flex;gap:6px;flex-shrink:0}
+.lbox-btns button{width:38px;height:38px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:1rem;cursor:pointer}
+.lbox-btns button:hover{background:rgba(255,255,255,.15)}
+.lbox-body{overflow:auto;max-height:calc(94vh - 58px)}
+.lbox-body img{width:100%;height:auto;display:block}
+
+/* header fit with Tools link */
+header.site .wrap{max-width:1360px;gap:18px}
+header.site .logo img{height:auto;width:clamp(170px,17vw,230px);max-width:none}
+nav.main a{padding-inline:8px;font-size:.9rem}
+@media (max-width:1320px){header.site .cta{display:none}}
+
+/* ===== News & outreach ===== */
+.sec-head .lede a{color:var(--brand-2)}
+.nwrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start}
+@media (max-width:900px){.nwrap{grid-template-columns:1fr}}
+.nfeat{border:1px solid var(--line);background:#fff}
+.nphotos{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.nphotos img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.nb{padding:22px clamp(18px,2.5vw,28px) 26px;display:grid;gap:10px}
+.nb h3{font-size:1.4rem}
+.nb p,.nlist p{color:var(--steel);font-size:.95rem;max-width:62ch}
+.nmeta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ntag{font:600 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brand);background:var(--ice);padding:6px 8px}
+.nmeta time{font:500 .76rem/1 var(--mono);color:var(--steel);letter-spacing:.06em}
+.nlink{font:600 .88rem/1.3 var(--body);color:var(--brand-2);text-decoration:none;justify-self:start}
+.nlink:hover{text-decoration:underline}
+.nlist{display:grid;gap:0;border-top:2px solid var(--brand)}
+.nlist article{display:grid;gap:8px;padding:20px 0 22px;border-bottom:1px solid var(--line)}
+.nlist h3{font-size:1.12rem}
 </style>
 </head>
 <body>
 
 
-<div class="util"><div class="wrap">
-  <span>PAN India HVAC &amp; Integrated MEP Contracting</span>
-  <span><a href="tel:+919595373634">+91 95953 73634</a><a href="mailto:sales.pune@infrigidate.in">sales.pune@infrigidate.in</a><a href="https://www.linkedin.com/company/infrigidate" target="_blank" rel="noopener">LinkedIn</a></span>
-</div></div>
-
 <header class="site"><div class="wrap">
   <a class="logo" href="#home" aria-label="Infrigidate home"><img src="img/infrigidate-logo.png" alt="Infrigidate"></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
   <nav class="main" id="nav">
-    <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#capabilities">Capabilities</a><a href="#industries">Industries</a><a href="#projects">Projects</a><a href="#quality">Quality &amp; Safety</a><a href="#careers">Careers</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#capabilities">Capabilities</a><a href="#industries">Industries</a><a href="#projects">Projects</a><a href="#quality">Quality &amp; Safety</a><a href="#tools">Tools</a><a href="#careers">Careers</a><a href="#contact">Contact</a>
   </nav>
   <a class="btn btn-dark cta" href="#contact">Request a Proposal</a>
 </div></header>
@@ -359,7 +469,6 @@ footer .logo img{height:32px;width:auto;max-width:100%}
   <section class="hero">
     <div class="bg" role="img" aria-label="HVAC ducting installed by Infrigidate at a pharmaceutical plant"></div>
     <div class="wrap">
-      <img class="hero-logo" src="img/infrigidate-logo.png" alt="Infrigidate Engineers India Pvt. Ltd.">
       <div class="eyebrow">HVAC &amp; Integrated MEP Contracting</div>
       <h1>Engineering precision environments across India.</h1>
       <p class="lede">We design, build, commission and maintain HVAC, electrical and control systems for pharmaceutical, healthcare and industrial facilities, with one team accountable from tender to handover.</p>
@@ -428,9 +537,59 @@ footer .logo img{height:32px;width:auto;max-width:100%}
     <div class="stds-wrap"><div class="stds-label">We also work to</div><div class="stds"><span>GMP</span><span>NABH / WHO</span><span>ASHRAE</span><span>ISHRAE</span><span>SMACNA</span></div></div>
   </div></section>
 
+  <section class="ice" id="appreciation"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Client appreciation</div><h2>In our clients' words.</h2></div>
+    <blockquote class="pull">“We have no hesitation in recommending M/s. Infrigidate Engineers India Pvt Ltd for HVAC work involving design, detailing, timely completion with good workmanship.”<cite>Written by each of the clients below on their appreciation letters</cite></blockquote>
+    <div class="lgrid" data-letters></div>
+  </div></section>
+
   <section><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">News</div><h2>Latest from Infrigidate.</h2></div>
-    <div class="news" id="homeNews"></div>
+    <div class="sec-head"><div class="eyebrow">Engineering tools</div><h2>Size it in seconds.</h2>
+      <p class="lede">Free calculators from our engineering team for early-stage HVAC checks.</p></div>
+    <div class="tiles">
+      <a class="tile" href="#tools-duct"><svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="14" width="24" height="16"/><path d="M28 18h12v8H28"/><path d="M10 22h12M18 18l4 4-4 4"/></svg><h3>Duct sizing</h3><p>Round and rectangular sizes by equal friction or velocity, with velocity and pressure drop.</p><span class="more arrow">Open calculator </span></a>
+      <a class="tile" href="#tools-pipe"><svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16h16a8 8 0 0 1 8 8v16"/><path d="M4 26h12a2 2 0 0 1 2 2v12"/><path d="M4 12v18M24 40h8"/></svg><h3>Pipe sizing</h3><p>Chilled and condenser water pipe selection from TR or flow, with friction and velocity checks.</p><span class="more arrow">Open calculator </span></a>
+      <a class="tile" href="#tools-load"><svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2"><circle cx="22" cy="22" r="7"/><path d="M22 4v6M22 34v6M4 22h6M34 22h6M9 9l4 4M31 31l4 4M35 9l-4 4M13 31l-4 4"/></svg><h3>Heat load estimate</h3><p>Rough tonnage for offices, retail, server rooms and more, with fresh air per ASHRAE 62.1.</p><span class="more arrow">Open calculator </span></a>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">News &amp; outreach</div><h2>Latest from Infrigidate.</h2>
+      <p class="lede">Company updates from our <a href="https://www.linkedin.com/company/infrigidate" target="_blank" rel="noopener">LinkedIn page</a>.</p></div>
+    <div class="nwrap">
+      <article class="nfeat">
+        <div class="nphotos">
+          <img src="img/li-cricket-trophy.jpg" alt="Daikin Dealer Pune Premier League 2025–26 winner's trophy and Best Batsman award" loading="lazy">
+          <img src="img/li-cricket-team.jpg" alt="Infrigidate team celebrating with the trophy" loading="lazy">
+        </div>
+        <div class="nb">
+          <div class="nmeta"><span class="ntag">Team &amp; culture</span><time datetime="2026-01-23">23 Jan 2026</time></div>
+          <h3>Champions of the Daikin Dealers Pune Premier League</h3>
+          <p>Infrigidate won its first title at the Daikin Airconditioning India Dealers Pune Premier League 2025–26, unbeaten all the way to the final, and took home the Best Batsman award as well. The same teamwork and discipline carries through to our sites.</p>
+          <a class="nlink" href="https://www.linkedin.com/posts/infrigidate_infrigidateengineers-champions-daikindealerspunepremierleague-activity-7420340544155000833-JxlY" target="_blank" rel="noopener">View post on LinkedIn ↗</a>
+        </div>
+      </article>
+      <div class="nlist">
+        <article>
+          <div class="nmeta"><span class="ntag">Careers</span><time datetime="2026-09-11">11 Sep 2026</time></div>
+          <h3>We're hiring site engineers in Pune</h3>
+          <p>Site engineers with 2–3 years of HVAC project experience to lead on-site execution and subcontractor coordination.</p>
+          <a class="nlink" href="#careers">See careers →</a>
+        </article>
+        <article>
+          <div class="nmeta"><span class="ntag">Company</span><time datetime="2025-12-24">24 Dec 2025</time></div>
+          <h3>Operations begin in Madhya Pradesh</h3>
+          <p>Our second office, at Pithampur, supports pharmaceutical, healthcare, cleanroom and industrial clients across central India.</p>
+          <a class="nlink" href="https://www.linkedin.com/posts/infrigidate_proud-to-announce-our-expansion-we-are-activity-7409608967733190656-Ynmk" target="_blank" rel="noopener">View post on LinkedIn ↗</a>
+        </article>
+        <article>
+          <div class="nmeta"><span class="ntag">Projects</span><time datetime="2026-04-06">2025–26</time></div>
+          <h3>Appreciation from four clients</h3>
+          <p>Cilicant, Fresenius Kabi, Knorr-Bremse and Rajaram Consumer Care issued appreciation letters on completion of their HVAC projects.</p>
+          <a class="nlink" href="#appreciation">Read the letters →</a>
+        </article>
+      </div>
+    </div>
   </div></section>
 </div>
 
@@ -463,9 +622,8 @@ footer .logo img{height:32px;width:auto;max-width:100%}
   <section><div class="wrap">
     <div class="sec-head"><div class="eyebrow">Leadership</div><h2>Hands-on at every stage.</h2>
       <p class="lede">Our leadership brings extensive experience in HVAC engineering, project execution and critical facility delivery, with a strong background in pharmaceutical, healthcare and industrial projects and in fast-track delivery.</p></div>
-    <div class="offices">
+    <div class="offices" style="grid-template-columns:minmax(0,640px)">
       <div class="office"><div class="tag">Founder Director</div><h3>Ankit Changediya</h3><p style="color:var(--steel)">Leads design, business development and client relationships. Active in ASHRAE's Pune Chapter and student outreach.</p></div>
-      <div class="office"><div class="tag">Director, Projects</div><h3>Shubham Dhuri</h3><p style="color:var(--steel)">Leads project engineering and execution, with a background in HVAC design for pharma, food and allied industries.</p></div>
     </div>
   </div></section>
   <section class="dark"><div class="wrap">
@@ -569,14 +727,144 @@ footer .logo img{height:32px;width:auto;max-width:100%}
       <li>Internal approval workflows with audit trails</li>
       <li>Early identification of commercial or procurement bottlenecks</li></ul>
   </div></section>
+</div>
+
+<!-- ===================== TOOLS ===================== -->
+<div class="page" data-page="tools" hidden>
+  <div class="phero"><div class="bg" style="background-image:url(img/rajaram-duct.jpg)"></div><div class="wrap">
+    <div class="crumbs"><a href="#home">Home</a> / Engineering Tools</div>
+    <div class="eyebrow">Engineering Tools</div><h1>Quick HVAC sizing calculators.</h1>
+    <p class="lede">Size a duct, select a chilled water pipe or estimate a cooling load in seconds. Built for early-stage checks by consultants, facility teams and project owners.</p>
+  </div></div>
   <section><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Recognition</div><h2>Completion and appreciation letters.</h2></div>
-    <div class="letters">
-      <img src="img/letter1.jpg" alt="Client appreciation letter 1" loading="lazy">
-      <img src="img/letter2.jpg" alt="Client appreciation letter 2" loading="lazy">
-      <img src="img/letter3.jpg" alt="Client appreciation letter 3" loading="lazy">
-      <img src="img/letter4.jpg" alt="Client appreciation letter 4" loading="lazy">
+    <div class="ttabs" role="tablist" aria-label="Calculators">
+      <button role="tab" id="tab-duct" aria-controls="tp-duct" aria-selected="true" data-tool="duct"><span class="tnum">01</span>Duct sizing</button>
+      <button role="tab" id="tab-pipe" aria-controls="tp-pipe" aria-selected="false" data-tool="pipe"><span class="tnum">02</span>Pipe sizing</button>
+      <button role="tab" id="tab-load" aria-controls="tp-load" aria-selected="false" data-tool="load"><span class="tnum">03</span>Heat load estimate</button>
     </div>
+
+    <!-- DUCT -->
+    <div class="tpanel" id="tp-duct" role="tabpanel" aria-labelledby="tab-duct">
+      <div class="tgrid">
+        <form class="calc" id="ductForm" onsubmit="return false">
+          <h3>Duct sizing</h3>
+          <p class="hint">Galvanised steel duct, standard air. Equal friction or velocity method.</p>
+          <div class="row2">
+            <label>Airflow<input id="dQ" type="number" min="1" step="any" value="2000" inputmode="decimal"></label>
+            <label>Unit<select id="dQu"><option value="cfm">CFM</option><option value="m3h">m³/h</option><option value="lps">L/s</option></select></label>
+          </div>
+          <fieldset class="seg"><legend>Sizing method</legend>
+            <label><input type="radio" name="dMode" id="dModeF" value="f" checked><span>Equal friction</span></label>
+            <label><input type="radio" name="dMode" id="dModeV" value="v"><span>Velocity</span></label>
+          </fieldset>
+          <label id="dFwrap">Friction rate (in. w.g. per 100 ft)<input id="dF" type="number" min="0.01" step="0.01" value="0.08"><small id="dFpa"></small></label>
+          <label id="dVwrap" hidden>Design velocity (FPM)<input id="dV" type="number" min="100" step="50" value="1500"><small id="dVms"></small></label>
+          <label>Rectangular duct depth (mm)<input id="dH" type="number" min="100" step="50" value="300"><small>Width is solved for equal friction and rounded up to 50 mm.</small></label>
+        </form>
+        <div class="res" aria-live="polite">
+          <div class="res-head">Round duct</div>
+          <div class="big"><b id="rD">–</b><span id="rDin"></span></div>
+          <dl class="kv">
+            <dt>Velocity</dt><dd id="rV">–</dd>
+            <dt>Friction</dt><dd id="rF">–</dd>
+            <dt>Airflow</dt><dd id="rQ">–</dd>
+          </dl>
+          <div class="chip" id="rVnote"></div>
+          <div class="res-head" style="margin-top:22px">Rectangular equivalent</div>
+          <div class="big sm"><b id="rR">–</b><span id="rRnote"></span></div>
+          <div class="tscroll"><table class="tt"><thead><tr><th>Size (W × D, mm)</th><th>Aspect</th><th>Velocity</th><th>Friction</th></tr></thead><tbody id="rTbl"></tbody></table></div>
+        </div>
+      </div>
+      <p class="tnote">Friction from the ASHRAE round-duct friction relation for galvanised steel; rectangular equivalents by the Huebscher equation (Dₑ = 1.30(ab)<sup>0.625</sup>/(a+b)<sup>0.25</sup>). Check fittings losses, noise criteria and space constraints before final selection.</p>
+    </div>
+
+    <!-- PIPE -->
+    <div class="tpanel" id="tp-pipe" role="tabpanel" aria-labelledby="tab-pipe" hidden>
+      <div class="tgrid">
+        <form class="calc" id="pipeForm" onsubmit="return false">
+          <h3>Water pipe sizing</h3>
+          <p class="hint">Schedule 40 steel, closed or open water circuits.</p>
+          <label>Service<select id="pSvc"><option value="chw">Chilled water (from TR and ΔT)</option><option value="cw">Condenser water (3 USGPM per TR)</option><option value="flow">Known flow rate</option></select></label>
+          <div class="row2" id="pTRrow">
+            <label>Cooling capacity (TR)<input id="pTR" type="number" min="0.1" step="any" value="100"></label>
+            <label id="pDTwrap">Water ΔT (°C)<input id="pDT" type="number" min="1" step="0.1" value="5.5"></label>
+          </div>
+          <div class="row2" id="pFrow" hidden>
+            <label>Flow rate<input id="pFlow" type="number" min="0.1" step="any" value="240"></label>
+            <label>Unit<select id="pFu"><option value="gpm">USGPM</option><option value="m3h">m³/h</option><option value="lps">L/s</option></select></label>
+          </div>
+          <div class="row2">
+            <label>Max friction (ft per 100 ft)<input id="pMF" type="number" min="0.5" step="0.5" value="4"><small id="pMFpa"></small></label>
+            <label>Max velocity above 2″ (ft/s)<input id="pMV" type="number" min="2" step="0.5" value="10"><small>Pipes up to 2″ limited to 4 ft/s.</small></label>
+          </div>
+        </form>
+        <div class="res" aria-live="polite">
+          <div class="res-head">Selected pipe</div>
+          <div class="big"><b id="sP">–</b><span id="sPin"></span></div>
+          <dl class="kv">
+            <dt>Flow</dt><dd id="sQ">–</dd>
+            <dt>Velocity</dt><dd id="sV">–</dd>
+            <dt>Friction</dt><dd id="sF">–</dd>
+          </dl>
+          <div class="tscroll"><table class="tt"><thead><tr><th>Size</th><th>ID</th><th>Velocity</th><th>Friction</th><th></th></tr></thead><tbody id="sTbl"></tbody></table></div>
+        </div>
+      </div>
+      <p class="tnote">Friction by Hazen-Williams with C = 120 for steel in closed systems. Selection is the smallest size within both the friction and velocity limits. Check pump head, valve authority and future capacity before final selection.</p>
+    </div>
+
+    <!-- LOAD -->
+    <div class="tpanel" id="tp-load" role="tabpanel" aria-labelledby="tab-load" hidden>
+      <div class="tgrid">
+        <form class="calc" id="loadForm" onsubmit="return false">
+          <h3>Rough cooling load</h3>
+          <p class="hint">Comfort air conditioning. Indicative only, for budgeting and early planning.</p>
+          <label>Space type<select id="lType">
+            <option value="office">Office</option><option value="conf">Conference / meeting room</option><option value="retail">Retail / showroom</option>
+            <option value="rest">Restaurant / cafeteria (excl. kitchen)</option><option value="class">Classroom / training room</option>
+            <option value="server">Server / IT room</option><option value="ind">Light industrial / assembly</option></select></label>
+          <div class="row2">
+            <label>Floor area<input id="lA" type="number" min="1" step="any" value="5000"></label>
+            <label>Unit<select id="lAu"><option value="ft2">ft²</option><option value="m2">m²</option></select></label>
+          </div>
+          <div class="row2">
+            <label>People<input id="lP" type="number" min="0" step="1" value="50"><small id="lPhint"></small></label>
+            <label>Envelope exposure<select id="lExp"><option value="low">Low: mid floor, little glass</option><option value="med" selected>Medium: typical</option><option value="high">High: top floor or large west glass</option></select></label>
+          </div>
+          <div class="row2">
+            <label>City (summer design)<select id="lCity">
+              <option value="pune">Pune</option><option value="mumbai">Mumbai</option><option value="delhi">Delhi NCR</option><option value="blr">Bengaluru</option>
+              <option value="chennai">Chennai</option><option value="hyd">Hyderabad</option><option value="indore">Indore / Pithampur</option><option value="ahd">Ahmedabad</option><option value="custom">Custom</option></select></label>
+            <label>Outdoor / indoor (°C)<span class="pair"><input id="lTo" type="number" step="0.5" value="38" aria-label="Outdoor dry bulb °C"><input id="lTi" type="number" step="0.5" value="24" aria-label="Indoor design °C"></span></label>
+          </div>
+          <details class="adv"><summary>Lighting, equipment and fresh air</summary>
+            <div class="row2">
+              <label>Lighting (W/m²)<input id="lLt" type="number" min="0" step="0.5" value="10"></label>
+              <label>Equipment (W/m²)<input id="lEq" type="number" min="0" step="0.5" value="16"></label>
+            </div>
+            <div class="row2">
+              <label>Outdoor air per person (CFM)<input id="lRp" type="number" min="0" step="0.5" value="5"></label>
+              <label>Outdoor air per ft² (CFM)<input id="lRa" type="number" min="0" step="0.01" value="0.06"></label>
+            </div>
+            <small>Fresh air defaults follow the ASHRAE 62.1 ventilation rate procedure (R<sub>p</sub>·P + R<sub>a</sub>·A).</small>
+          </details>
+        </form>
+        <div class="res" aria-live="polite">
+          <div class="res-head">Estimated cooling load</div>
+          <div class="big"><b id="oTR">–</b><span>TR</span></div>
+          <dl class="kv">
+            <dt>Capacity</dt><dd id="oKW">–</dd>
+            <dt>Area per TR</dt><dd id="oSq">–</dd>
+            <dt>Supply air</dt><dd id="oSA">–</dd>
+            <dt>Fresh air</dt><dd id="oOA">–</dd>
+          </dl>
+          <div class="res-head" style="margin-top:22px">Where the load comes from</div>
+          <div class="bars" id="oBars"></div>
+        </div>
+      </div>
+      <p class="tnote">Rule-of-thumb method: envelope factor scaled to the design temperature difference, ASHRAE people gains, lighting and equipment, ventilation load and a 10% allowance. Not suitable for pharmaceutical cleanrooms, where air change rates and process loads govern. Final equipment selection needs a room-by-room load calculation.</p>
+    </div>
+
+    <div class="tcta"><div><h3>Need a design you can build from?</h3><p>Our engineers carry out detailed ASHRAE heat load calculations, duct and pipe design, and cleanroom air balance for critical facilities.</p></div><a class="btn btn-primary arrow" href="#contact">Request a Proposal</a></div>
   </div></section>
 </div>
 
@@ -638,6 +926,10 @@ footer .logo img{height:32px;width:auto;max-width:100%}
   </div></section>
 </div>
 
+<dialog class="lbox" id="lbox" aria-labelledby="lboxCap">
+  <div class="lbox-bar"><span id="lboxCap"></span><span class="lbox-btns"><button type="button" id="lboxPrev" aria-label="Previous letter">←</button><button type="button" id="lboxNext" aria-label="Next letter">→</button><button type="button" id="lboxClose" aria-label="Close">✕</button></span></div>
+  <div class="lbox-body"><img id="lboxImg" alt=""></div>
+</dialog>
 </main>
 
 <div class="band"><div class="wrap">
@@ -650,11 +942,11 @@ footer .logo img{height:32px;width:auto;max-width:100%}
     <div><a class="logo" href="#home"><img src="img/infrigidate-logo-white.png" alt="Infrigidate"></a>
       <p>HVAC &amp; integrated MEP contracting company delivering technically complex, compliance-driven projects across India.</p></div>
     <div><h4>Solutions</h4><ul><li><a href="#solutions">HVAC Systems</a></li><li><a href="#solutions">Cleanroom Solutions</a></li><li><a href="#solutions">Electrical Solutions</a></li><li><a href="#solutions">BMS &amp; Controls</a></li><li><a href="#solutions">Energy Management</a></li></ul></div>
-    <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#projects">Projects</a></li><li><a href="#quality">Quality &amp; Safety</a></li><li><a href="#careers">Careers</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#projects">Projects</a></li><li><a href="#quality">Quality &amp; Safety</a></li><li><a href="#appreciation">Client Appreciation</a></li><li><a href="#tools">Engineering Tools</a></li><li><a href="#careers">Careers</a></li></ul></div>
     <div><h4>Offices</h4><ul>
       <li>Office 20, City Vista B, Fountain Road, Kharadi, Pune 411014</li>
       <li>Office 128, Medi-Caps Business Park, Pithampur, MP</li>
-      <li>+91 95953 73634</li><li>sales.pune@infrigidate.in</li></ul></div>
+      <li>+91 95953 73634</li><li>sales.pune@infrigidate.in</li><li><a href="https://www.linkedin.com/company/infrigidate" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul></div>
   </div>
   <div class="bottom"><span>© <span id="yr">2026</span> Infrigidate Engineers India Pvt. Ltd. · CIN U22209PN2024PTC230478</span><span class="isoline">ISO 9001 · ISO 14001 · ISO 45001 certified</span><span>Privacy Policy · Terms of Use</span></div>
 </div></footer>
@@ -746,11 +1038,6 @@ const PROJ=[
   imgs:['knorr-plant','knorr-cfd','knorr-vrf1','knorr-vrf2','knorr-vrf3','knorr-vrf4','knorr-ddc']}
 ];
 const LOGOS=['rajaram','fresenius','knorr-bremse','jotun','cilicant','vertiv','conrad','encube','lauritz-knudsen','quick-heal','nutrivita','rajaram-solvex'];
-const NEWS=[
- ['Company','Infrigidate starts operations in Madhya Pradesh','A new office at Medi-Caps Business Park, Pithampur, serves pharmaceutical, healthcare, cleanroom and industrial clients in central India.'],
- ['Projects','Appreciation from Fresenius Kabi and Rajaram','Clients recognised our design-to-commissioning delivery on critical HVAC projects, and Rajaram awarded follow-on Phases V and VI.'],
- ['Community','Expert talk at MIT World Peace University','Our Founder Director spoke on careers in HVAC&R at the installation of the ASHRAE student chapter.']
-];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -766,7 +1053,6 @@ $('#aboutFocus').innerHTML=FOCUS.map(w=>`<div><b>${esc(w[0])}</b></div>`).join('
 const lg=LOGOS.map(l=>`<img src="img/logo-${l}.png" alt="${l.replace(/-/g,' ')} logo">`).join('');
 $('#marquee').innerHTML=lg+lg.replace(/alt="[^"]*"/g,'alt="" aria-hidden="true"');
 $('#logoGrid').innerHTML=LOGOS.map(l=>`<div><img src="img/logo-${l}.png" alt="${l.replace(/-/g,' ')} logo" loading="lazy"></div>`).join('');
-$('#homeNews').innerHTML=NEWS.map(n=>`<article><time>${esc(n[0])}</time><h3>${esc(n[1])}</h3><p>${esc(n[2])}</p></article>`).join('');
 
 $('#solList').innerHTML=SOL.map((s,i)=>`<div class="sol"><div class="block"><span class="num">SOLUTION ${String(i+1).padStart(2,'0')}</span><span class="ic" style="width:48px;color:var(--brand)">${ICON[s.id]}</span><h2 style="font-size:1.9rem">${esc(s.t)}</h2><p class="lede">${esc(s.d)}</p></div><div class="block"><img src="img/${s.img}.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:16/8;object-fit:cover"><div class="chips">${s.items.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div></div>`).join('');
 $('#capList').innerHTML=CAP.map(c=>`<div class="sol"><div class="block"><h2 style="font-size:1.8rem">${esc(c.t)}</h2></div><ul class="checks">${c.l.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
@@ -799,14 +1085,143 @@ function detail(p){
 const nav=$('#nav');
 function route(){
  let h=(location.hash||'#home').slice(1)||'home',page=h;
+ if(h==='appreciation')page='home';
+ if(h.startsWith('tools')){page='tools';window.setTool&&setTool(h.split('-')[1]||'duct')}
  if(h.startsWith('project-')){const p=PROJ.find(x=>'project-'+x.id===h);if(p){detail(p);page='project'}else page='projects'}
  if(!document.querySelector(`.page[data-page="${page}"]`))page='home';
  document.querySelectorAll('.page').forEach(el=>{const on=el.dataset.page===page;el.hidden=!on;if(on){el.classList.remove('fade');void el.offsetWidth;el.classList.add('fade')}});
  const act=page==='project'?'projects':page;
  nav.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href')==='#'+act)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
  nav.classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
+ if(h==='appreciation'){const t=document.getElementById('appreciation');if(t){setTimeout(()=>t.scrollIntoView(),0);return}}
  window.scrollTo(0,0);
 }
+
+// ===== Engineering tools =====
+(function(){
+ const g=id=>document.getElementById(id), num=id=>parseFloat(g(id).value);
+ const f1=(x,d=1)=>isFinite(x)?x.toLocaleString('en-IN',{maximumFractionDigits:d,minimumFractionDigits:d}):'–';
+ const f0=x=>isFinite(x)?Math.round(x).toLocaleString('en-IN'):'–';
+ const PA_PER_INWG100=8.172, PA_PER_FT100=97.9;
+ // tabs
+ const tabs=[...document.querySelectorAll('.ttabs [data-tool]')];
+ window.setTool=function(t){if(!['duct','pipe','load'].includes(t))t='duct';
+  tabs.forEach(b=>{const on=b.dataset.tool===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;g('tp-'+b.dataset.tool).hidden=!on})};
+ tabs.forEach((b,i)=>{b.addEventListener('click',()=>{history.replaceState(null,'','#tools-'+b.dataset.tool);setTool(b.dataset.tool)});
+  b.addEventListener('keydown',e=>{if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();n.click()})});
+
+ // ---- DUCT ----
+ const fr=(Q,D)=>0.109136*Math.pow(Q,1.9)/Math.pow(D,5.02);           // in.wg/100ft, Q cfm, D in
+ const De=(a,b)=>1.30*Math.pow(a*b,0.625)/Math.pow(a+b,0.25);          // any length unit
+ function rectW(D,H){let lo=0.5,hi=400;for(let k=0;k<80;k++){const m=(lo+hi)/2;De(m,H)<D?lo=m:hi=m}return hi}
+ function duct(){
+  const q=num('dQ'),u=g('dQu').value; const Q=u==='m3h'?q/1.699:u==='lps'?q*2.11888:q;
+  const modeV=g('dModeV').checked; g('dFwrap').hidden=modeV; g('dVwrap').hidden=!modeV;
+  g('dFpa').textContent='= '+f1(num('dF')*PA_PER_INWG100,2)+' Pa/m';
+  g('dVms').textContent='= '+f1(num('dV')*0.00508,2)+' m/s';
+  if(!(Q>0)){return}
+  let D; if(modeV){const V=num('dV');D=Math.sqrt(4*(Q/V)/Math.PI)*12}else{D=Math.pow(0.109136*Math.pow(Q,1.9)/num('dF'),1/5.02)}
+  const V=Q/(Math.PI*Math.pow(D/12,2)/4), F=fr(Q,D), Dmm=D*25.4;
+  g('rD').textContent=f0(Dmm)+' mm'; g('rDin').textContent='Ø '+f1(D,1)+'″ · use '+(Math.ceil(Dmm/25)*25)+' mm';
+  g('rV').textContent=f0(V)+' FPM  ·  '+f1(V*0.00508,2)+' m/s';
+  g('rF').textContent=f1(F,3)+' in.wg/100ft  ·  '+f1(F*PA_PER_INWG100,2)+' Pa/m';
+  g('rQ').textContent=f0(Q)+' CFM  ·  '+f0(Q*1.699)+' m³/h';
+  const n=g('rVnote'); n.className='chip';
+  if(V>2000){n.textContent='High velocity: noise risk in occupied areas';n.classList.add('warn')}
+  else if(V>=1200){n.textContent='Typical main duct velocity';n.classList.add('ok')}
+  else if(V>=600){n.textContent='Typical branch / low-velocity duct';n.classList.add('ok')}
+  else {n.textContent='Very low velocity: duct may be oversized';n.classList.add('warn')}
+  const row=(Hmm)=>{const Hin=Hmm/25.4;let Wmm=Math.ceil(rectW(D,Hin)*25.4/50)*50;Wmm=Math.max(Wmm,100);
+   const de=De(Wmm/25.4,Hin),vel=Q/((Wmm*Hmm)/92903),ff=fr(Q,de),asp=Math.max(Wmm,Hmm)/Math.min(Wmm,Hmm);return{Wmm,Hmm,vel,ff,asp}};
+  const H=Math.max(100,num('dH')||300), main=row(H);
+  g('rR').textContent=main.Wmm+' × '+main.Hmm+' mm';
+  g('rRnote').textContent=f0(main.vel)+' FPM · aspect '+f1(main.asp,1)+':1'+(main.asp>4?' (above 4:1, consider deeper duct)':'');
+  const depths=[...new Set([200,250,300,400,500,600,H])].sort((a,b)=>a-b);
+  g('rTbl').innerHTML=depths.map(h=>{const r=row(h);return`<tr class="${h===H?'sel':''}"><td>${r.Wmm} × ${r.Hmm}</td><td class="${r.asp>4?'flag':''}">${f1(r.asp,1)}:1</td><td>${f0(r.vel)} FPM</td><td>${f1(r.ff*PA_PER_INWG100,2)} Pa/m</td></tr>`}).join('');
+ }
+
+ // ---- PIPE ----
+ const PIPES=[['15','½″',0.622],['20','¾″',0.824],['25','1″',1.049],['32','1¼″',1.380],['40','1½″',1.610],['50','2″',2.067],['65','2½″',2.469],['80','3″',3.068],['100','4″',4.026],['125','5″',5.047],['150','6″',6.065],['200','8″',7.981],['250','10″',10.020],['300','12″',11.938],['350','14″',13.124],['400','16″',15.000],['450','18″',16.876],['500','20″',18.812],['600','24″',22.624]];
+ const hw=(gpm,d)=>0.2083*Math.pow(100/120,1.852)*Math.pow(gpm,1.852)/Math.pow(d,4.8655);
+ function pipe(){
+  const svc=g('pSvc').value; g('pTRrow').hidden=svc==='flow'; g('pFrow').hidden=svc!=='flow'; g('pDTwrap').hidden=svc!=='chw';
+  g('pMFpa').textContent='= '+f0(num('pMF')*PA_PER_FT100)+' Pa/m';
+  let gpm; if(svc==='chw')gpm=24*num('pTR')/(num('pDT')*1.8); else if(svc==='cw')gpm=3*num('pTR');
+  else{const q=num('pFlow'),u=g('pFu').value;gpm=u==='m3h'?q*4.4029:u==='lps'?q*15.8503:q}
+  if(!(gpm>0))return;
+  const mf=num('pMF'),mv=num('pMV');
+  const rows=PIPES.map((p,i)=>{const v=0.4085*gpm/(p[2]*p[2]),h=hw(gpm,p[2]),vl=p[2]<=2.1?4:mv;return{i,dn:p[0],nps:p[1],id:p[2],v,h,ok:h<=mf&&v<=vl}});
+  const s=rows.find(r=>r.ok);
+  g('sQ').textContent=f0(gpm)+' USGPM  ·  '+f1(gpm*0.2271,1)+' m³/h';
+  if(!s){g('sP').textContent='> DN 600';g('sPin').textContent='Flow exceeds table range';['sV','sF'].forEach(k=>g(k).textContent='–');g('sTbl').innerHTML='';return}
+  g('sP').textContent='DN '+s.dn; g('sPin').textContent=s.nps+' NB · Sch 40';
+  g('sV').textContent=f1(s.v,1)+' ft/s  ·  '+f1(s.v*0.3048,2)+' m/s';
+  g('sF').textContent=f1(s.h,2)+' ft/100ft  ·  '+f0(s.h*PA_PER_FT100)+' Pa/m';
+  g('sTbl').innerHTML=rows.slice(Math.max(0,s.i-1),s.i+2).map(r=>`<tr class="${r===s?'sel':''}"><td>DN ${r.dn} (${r.nps})</td><td>${f1(r.id*25.4,1)} mm</td><td class="${r.ok?'':'flag'}">${f1(r.v*0.3048,2)} m/s</td><td class="${r.h<=mf?'':'flag'}">${f0(r.h*PA_PER_FT100)} Pa/m</td><td>${r===s?'Selected':r.ok?'Larger option':'Over limit'}</td></tr>`).join('');
+ }
+
+ // ---- LOAD ----
+ // ft2 per person, lighting W/m2, equipment W/m2, Rp cfm/p, Ra cfm/ft2, sensible & latent Btu/h per person
+ const TYPES={office:[100,10,16,5,0.06,250,200],conf:[20,11,5,5,0.06,245,155],retail:[65,15,5,7.5,0.12,250,200],rest:[15,11,11,7.5,0.18,275,275],class:[30,11,5,10,0.12,245,155],server:[1000,11,430,5,0.06,250,200],ind:[140,13,32,10,0.18,300,400]};
+ const CITY={pune:[38,35],mumbai:[34,75],delhi:[43,40],blr:[34,30],chennai:[38,70],hyd:[40,35],indore:[41,35],ahd:[42,40]};
+ const EXP={low:10,med:18,high:28}; // Btu/h·ft2 at 16 °C difference
+ let peopleTouched=false, gr=35;
+ function applyType(){const t=TYPES[g('lType').value];g('lLt').value=t[1];g('lEq').value=t[2];g('lRp').value=t[3];g('lRa').value=t[4];peopleTouched=false;autoPeople()}
+ function areaFt(){const a=num('lA');return g('lAu').value==='m2'?a*10.7639:a}
+ function autoPeople(){const t=TYPES[g('lType').value];const p=Math.max(1,Math.round(areaFt()/t[0]));g('lPhint').textContent='Typical: '+p+' ('+t[0]+' ft²/person)';if(!peopleTouched)g('lP').value=p}
+ function applyCity(){const c=CITY[g('lCity').value];if(c){g('lTo').value=c[0];gr=c[1]}}
+ function load(){
+  const A=areaFt(), t=TYPES[g('lType').value], P=Math.max(0,num('lP')||0);
+  if(!(A>0))return;
+  const dTc=Math.max(0,num('lTo')-num('lTi')), dTf=dTc*1.8, Am2=A/10.7639;
+  const env=A*EXP[g('lExp').value]*(dTc/16);
+  const ppl=P*(t[5]+t[6]);
+  const lt=num('lLt')*Am2*3.412, eq=num('lEq')*Am2*3.412;
+  const oa=num('lRp')*P+num('lRa')*A;
+  const oaS=1.08*oa*dTf, oaL=0.68*oa*gr, oaT=oaS+oaL;
+  const sub=env+ppl+lt+eq+oaT, sf=0.10*sub, tot=sub+sf, TR=tot/12000;
+  const rsh=(env+P*t[5]+lt+eq)*1.1, sa=rsh/(1.08*20);
+  g('oTR').textContent=f1(TR,1);
+  g('oKW').textContent=f1(TR*3.517,1)+' kW  ·  '+f0(tot)+' Btu/h';
+  const m2=g('lAu').value==='m2';
+  g('oSq').textContent=m2?f1(Am2/TR,1)+' m²/TR':f0(A/TR)+' ft²/TR';
+  g('oSA').textContent=f0(sa)+' CFM  ·  '+f0(sa*1.699)+' m³/h';
+  g('oOA').textContent=f0(oa)+' CFM  ·  '+f0(oa*1.699)+' m³/h';
+  const parts=[['Envelope',env],['People',ppl],['Lighting',lt],['Equipment',eq],['Fresh air',oaT],['10% allowance',sf]];
+  const mx=Math.max(...parts.map(p=>p[1]));
+  g('oBars').innerHTML=parts.map((p,i)=>`<div class="bar"><span>${p[0]}</span><i class="${i===4?'l':''}" style="width:${(p[1]/mx*100).toFixed(1)}%"></i><b>${f1(p[1]/12000,1)} TR</b></div>`).join('');
+ }
+ g('lType').addEventListener('change',()=>{applyType();load()});
+ g('lCity').addEventListener('change',()=>{applyCity();load()});
+ ['lA','lAu'].forEach(id=>g(id).addEventListener('input',()=>{autoPeople();load()}));
+ g('lAu').addEventListener('change',()=>{autoPeople();load()});
+ g('lP').addEventListener('input',()=>{peopleTouched=true;load()});
+ g('lTo').addEventListener('input',()=>{g('lCity').value='custom'});
+ g('loadForm').addEventListener('input',load);g('loadForm').addEventListener('change',load);
+ g('ductForm').addEventListener('input',duct);g('ductForm').addEventListener('change',duct);
+ g('pipeForm').addEventListener('input',pipe);g('pipeForm').addEventListener('change',pipe);
+ applyType();applyCity();duct();pipe();load();
+})();
+
+// ===== Client appreciation letters =====
+(function(){
+ const L=[
+  {img:'letter4',client:'Cilicant Pvt Ltd, Pune',project:'Screw mixing and production area',scope:'Turnkey HVAC: AHUs with VRF condensing units and dehumidifier, NMT 23 °C / 40% RH',date:'6 Apr 2026'},
+  {img:'letter2',client:'Fresenius Kabi India',project:'Finished goods warehouse',scope:'Design and build of HVAC: AHU with VRF condensing units',date:'8 Aug 2025'},
+  {img:'letter1',client:'Knorr-Bremse Technology Centre India',project:'R&D facility for rail compressor testing',scope:'Design and build of HVAC system',date:'14 May 2025'},
+  {img:'letter3',client:'Rajaram Consumer Care',project:'Pharmaceutical QC and pharma area',scope:'Design and build of HVAC system',date:'14 May 2025'}
+ ];
+ const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+ document.querySelectorAll('[data-letters]').forEach(g=>{g.innerHTML=L.map((l,i)=>`<button type="button" class="lcard" data-li="${i}" aria-label="View appreciation letter from ${esc(l.client)}"><span class="doc"><img src="img/${l.img}.jpg" alt="" loading="lazy"></span><span class="b"><span class="cl">${esc(l.client)}</span><span class="pr">${esc(l.project)}</span><span class="sc">${esc(l.scope)}</span><time>${l.date}</time></span></button>`).join('')});
+ const d=document.getElementById('lbox'),img=document.getElementById('lboxImg'),cap=document.getElementById('lboxCap');let cur=0;
+ function show(i){cur=(i+L.length)%L.length;const l=L[cur];img.src='img/'+l.img+'.jpg';img.alt='Appreciation letter from '+l.client+', '+l.date;cap.textContent=l.client+' · '+l.date;d.querySelector('.lbox-body').scrollTop=0}
+ document.addEventListener('click',e=>{const c=e.target.closest('.lcard');if(!c)return;show(+c.dataset.li);if(d.showModal){d.showModal()}else{d.setAttribute('open','')}});
+ document.getElementById('lboxClose').addEventListener('click',()=>d.close?d.close():d.removeAttribute('open'));
+ document.getElementById('lboxPrev').addEventListener('click',()=>show(cur-1));
+ document.getElementById('lboxNext').addEventListener('click',()=>show(cur+1));
+ d.addEventListener('click',e=>{if(e.target===d)d.close()});
+ d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+})();
 window.addEventListener('hashchange',route);route();
 $('#burger').addEventListener('click',()=>{const o=nav.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)});
 
