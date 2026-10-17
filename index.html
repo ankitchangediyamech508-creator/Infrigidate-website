@@ -883,13 +883,18 @@ nav.main a{padding-inline:8px;font-size:.9rem}
         <li>Mentoring from engineers active in ASHRAE and industry forums</li>
         <li>Offices in Pune and Pithampur, with sites across India</li></ul>
       <p style="color:var(--steel)">We also run talks and learning sessions for engineering students through ASHRAE student chapters.</p></div>
-    <form class="enq" id="careerForm" novalidate>
-      <label>Full name<input id="c-name" required></label>
-      <label>Phone<input id="c-phone" type="tel" required></label>
-      <label class="full">Email<input id="c-email" type="email" required></label>
-      <label>Area of interest<select id="c-area"><option>HVAC design</option><option>Site execution</option><option>Estimation &amp; tendering</option><option>Commissioning &amp; service</option><option>Electrical &amp; controls</option><option>Internship</option></select></label>
-      <label>Experience (years)<input id="c-exp" type="number" min="0" max="40"></label>
-      <label class="full">Upload CV (PDF)<input id="c-cv" type="file" accept=".pdf,.doc,.docx"></label>
+    <form class="enq" id="careerForm" novalidate action="https://formsubmit.co/human-resource@infrigidate.in" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New job application – infrigidate.in">
+      <input type="hidden" name="_cc" value="ankit.rc@infrigidate.in">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://infrigidate.in/#thanks-careers">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>Full name<input id="c-name" name="Name" required></label>
+      <label>Phone<input id="c-phone" name="Phone" type="tel" required></label>
+      <label class="full">Email<input id="c-email" name="email" type="email" required></label>
+      <label>Area of interest<select id="c-area" name="Area of interest"><option>HVAC design</option><option>Site execution</option><option>Estimation &amp; tendering</option><option>Commissioning &amp; service</option><option>Electrical &amp; controls</option><option>Internship</option></select></label>
+      <label>Experience (years)<input id="c-exp" name="Experience (years)" type="number" min="0" max="40"></label>
+      <label class="full">Upload CV (PDF)<input id="c-cv" name="CV" type="file" accept=".pdf,.doc,.docx"></label>
       <div class="full"><button class="btn btn-dark arrow" type="submit">Submit application</button></div>
     </form>
   </div></section>
@@ -912,15 +917,20 @@ nav.main a{padding-inline:8px;font-size:.9rem}
           <div class="copyrow"><span>sales.pune@infrigidate.in</span><button type="button" data-copy="sales.pune@infrigidate.in">Copy</button></div></div>
       </div>
     </div>
-    <form class="enq" id="enqForm" novalidate>
-      <label>Name *<input id="e-name" required></label>
-      <label>Company *<input id="e-company" required></label>
-      <label>Phone *<input id="e-phone" type="tel" required></label>
-      <label>Email *<input id="e-email" type="email" required></label>
-      <label>Enquiry type<select id="e-type"><option>New project / proposal</option><option>AMC / service</option><option>Audit / energy study</option><option>Vendor registration</option></select></label>
-      <label>Industry<select id="e-ind"><option>Pharmaceutical &amp; life sciences</option><option>Healthcare &amp; hospitals</option><option>Cleanrooms &amp; controlled environments</option><option>Industrial &amp; manufacturing</option><option>Warehousing &amp; logistics</option><option>Commercial &amp; institutional</option></select></label>
-      <label class="full">Project details<textarea id="e-msg" placeholder="Location, area (sq ft), design conditions, timeline"></textarea></label>
-      <label class="full">Attach drawings or BOQ<input id="e-file" type="file"></label>
+    <form class="enq" id="enqForm" novalidate action="https://formsubmit.co/sales.pune@infrigidate.in" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New website enquiry – infrigidate.in">
+      <input type="hidden" name="_cc" value="ankit.rc@infrigidate.in">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://infrigidate.in/#thanks">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>Name *<input id="e-name" name="Name" required></label>
+      <label>Company *<input id="e-company" name="Company" required></label>
+      <label>Phone *<input id="e-phone" name="Phone" type="tel" required></label>
+      <label>Email *<input id="e-email" name="email" type="email" required></label>
+      <label>Enquiry type<select id="e-type" name="Enquiry type"><option>New project / proposal</option><option>AMC / service</option><option>Audit / energy study</option><option>Vendor registration</option></select></label>
+      <label>Industry<select id="e-ind" name="Industry"><option>Pharmaceutical &amp; life sciences</option><option>Healthcare &amp; hospitals</option><option>Cleanrooms &amp; controlled environments</option><option>Industrial &amp; manufacturing</option><option>Warehousing &amp; logistics</option><option>Commercial &amp; institutional</option></select></label>
+      <label class="full">Project details<textarea id="e-msg" name="Project details" placeholder="Location, area (sq ft), design conditions, timeline"></textarea></label>
+      <label class="full">Attach drawings or BOQ<input id="e-file" name="Attachment" type="file"></label>
       <div class="full"><button class="btn btn-dark arrow" type="submit">Send enquiry</button></div>
     </form>
   </div></section>
@@ -1086,6 +1096,7 @@ const nav=$('#nav');
 function route(){
  let h=(location.hash||'#home').slice(1)||'home',page=h;
  if(h==='appreciation')page='home';
+ if(h==='thanks'||h==='thanks-careers'){page=h==='thanks'?'contact':'careers';setTimeout(()=>{const f=$(h==='thanks'?'#enqForm':'#careerForm');if(!f)return;f.querySelector('.formmsg')?.remove();const d=document.createElement('div');d.className='formmsg';d.textContent=h==='thanks'?'Thank you. Your enquiry has reached our sales team, and we will reply within one working day.':'Thank you. Your application has reached our team, and we will be in touch if there is a suitable role.';f.prepend(d);f.scrollIntoView({block:'start'})},50)}
  if(h.startsWith('tools')){page='tools';window.setTool&&setTool(h.split('-')[1]||'duct')}
  if(h.startsWith('project-')){const p=PROJ.find(x=>'project-'+x.id===h);if(p){detail(p);page='project'}else page='projects'}
  if(!document.querySelector(`.page[data-page="${page}"]`))page='home';
@@ -1226,14 +1237,16 @@ window.addEventListener('hashchange',route);route();
 $('#burger').addEventListener('click',()=>{const o=nav.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)});
 
 // forms
-function wire(id,msg){const f=$(id);f.addEventListener('submit',e=>{e.preventDefault();
+function wire(id){const f=$(id);f.addEventListener('submit',e=>{
  const req=[...f.querySelectorAll('[required]')];const bad=req.find(x=>!x.value.trim()||(x.type==='email'&&!/^\S+@\S+\.\S+$/.test(x.value)));
- f.querySelector('.formmsg')?.remove();const d=document.createElement('div');d.className='formmsg';
- if(bad){d.style.background='#fdecea';d.style.color='#8a1f17';d.textContent='Please fill in '+bad.closest('label').firstChild.textContent.replace('*','').trim().toLowerCase()+' to continue.';bad.focus()}
- else{d.textContent=msg;f.reset()}
+ const big=[...f.querySelectorAll('input[type=file]')].find(x=>x.files[0]&&x.files[0].size>5*1024*1024);
+ f.querySelector('.formmsg')?.remove();
+ if(!bad&&!big){const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Sending…';return}
+ e.preventDefault();const d=document.createElement('div');d.className='formmsg';d.style.background='#fdecea';d.style.color='#8a1f17';
+ if(bad){d.textContent='Please fill in '+bad.closest('label').firstChild.textContent.replace('*','').trim().toLowerCase()+' to continue.';bad.focus()}
+ else{d.textContent='Attachments must be under 5 MB. For larger drawings, send them to sales.pune@infrigidate.in.';big.focus()}
  f.appendChild(d)})}
-wire('#enqForm','Preview only: on the live site this enquiry will be emailed to sales.pune@infrigidate.in.');
-wire('#careerForm','Preview only: on the live site this application will be emailed to the HR team.');
+wire('#enqForm');wire('#careerForm');
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent='Copied'},()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling);getSelection().removeAllRanges();getSelection().addRange(r);b.textContent='Selected'});setTimeout(()=>b.textContent='Copy',1800)}));
 $('#yr').textContent=new Date().getFullYear();
 </script>
