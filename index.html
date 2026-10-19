@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Infrigidate Engineers</title>
+<title>Infrigidate</title>
 <meta name="description" content="Infrigidate Engineers India Pvt. Ltd. — ISO 9001, 14001 and 45001 certified HVAC and integrated MEP contractor for pharmaceutical, healthcare and industrial facilities. Free duct sizing, pipe sizing and heat load calculators.">
 <link rel="icon" type="image/png" href="img/infrigidate-logo.png">
 
@@ -77,13 +77,13 @@ header .cta{padding:11px 18px}
 .hero .lede{color:#cfdde8;font-size:1.2rem}
 .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
 .hero .eyebrow{color:#8fd8ec}
-.plate{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.18)}
+.plate{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.18)}
 .plate div{padding:22px 20px 26px 0;border-right:1px solid rgba(255,255,255,.14)}
 .plate div+div{padding-left:22px}
 .plate div:last-child{border-right:0}
 .plate b{display:block;font:700 clamp(1.8rem,3vw,2.5rem)/1 var(--display);font-stretch:85%;color:#fff}
 .plate small{font:400 .78rem/1.3 var(--mono);color:#9fb6c7;letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:8px}
-@media (max-width:720px){.plate{grid-template-columns:1fr 1fr}.plate div:nth-child(2){border-right:0}.plate div:nth-child(3){padding-left:0}.plate div{border-bottom:1px solid rgba(255,255,255,.14)}}
+@media (max-width:720px){.plate{grid-template-columns:1fr}.plate div{border-right:0!important;padding-left:0!important}.plate div{border-bottom:1px solid rgba(255,255,255,.14)}}
 
 /* page hero (inner) */
 .phero{background:var(--navy);color:#fff;padding-block:clamp(56px,8vw,96px) clamp(40px,6vw,64px);position:relative;overflow:hidden}
@@ -448,6 +448,403 @@ nav.main a{padding-inline:8px;font-size:.9rem}
 .nlist{display:grid;gap:0;border-top:2px solid var(--brand)}
 .nlist article{display:grid;gap:8px;padding:20px 0 22px;border-bottom:1px solid var(--line)}
 .nlist h3{font-size:1.12rem}
+
+/* ===== Home trim: trust band + tools band ===== */
+.checks li b{color:var(--brand);font-weight:650}
+.isoband,.toolband{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;padding:18px 22px;border:1px solid var(--line);background:var(--frost);text-decoration:none;color:var(--ink);transition:border-color .2s}
+.isoband:hover,.toolband:hover{border-color:var(--brand-2)}
+.isolabel{font:500 .74rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.isob{display:grid;gap:2px;padding-left:14px;border-left:3px solid var(--brand)}
+.isob b{font:700 1.05rem/1.1 var(--display);color:var(--brand)}
+.isob small{font-size:.8rem;color:var(--steel)}
+.toolband span:not(.isolabel):not(.more){font:600 .95rem/1.2 var(--body);color:var(--brand)}
+.isoband .more,.toolband .more{margin-left:auto;font:500 .82rem/1 var(--mono);color:var(--brand-2)}
+@media (max-width:640px){.isoband .more,.toolband .more{margin-left:0}}
+
+/* ===== Home colour & motion (Oct 2026) =====
+   Navy hero and trust band, cyan accent, cool-grey and white alternation. */
+:root{--deep:#00253f;--deep-2:#003a63;--cyan:#00a3e0;--cyan-soft:#7fd6f5;--mist:#f2f6f9}
+[data-page="home"] .hero{background:var(--deep);color:#fff;border-bottom:0}
+[data-page="home"] .hero .bg{animation:kb 26s ease-in-out infinite alternate;transform-origin:70% 40%}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+[data-page="home"] .hero .bg::after{background:
+  radial-gradient(ellipse at 85% 90%,rgba(0,163,224,.28),transparent 55%),
+  linear-gradient(100deg,rgba(0,37,63,.97) 0%,rgba(0,45,78,.90) 42%,rgba(0,58,99,.55) 75%,rgba(0,71,119,.30) 100%)}
+[data-page="home"] .hero h1{color:#fff}
+[data-page="home"] .hero h1 .hl{background:linear-gradient(90deg,var(--cyan-soft),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-page="home"] .hero .eyebrow{color:var(--cyan-soft)}
+[data-page="home"] .hero .eyebrow::before{background:var(--cyan)}
+[data-page="home"] .hero .lede{color:#cfe0ee}
+[data-page="home"] .hero .btn-primary{background:var(--cyan);color:var(--deep)}
+[data-page="home"] .hero .btn-primary:hover{background:#3cc0f0}
+[data-page="home"] .hero .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+[data-page="home"] .hero .btn-ghost:hover{background:rgba(255,255,255,.12)}
+[data-page="home"] .plate{border-top-color:rgba(255,255,255,.2)}
+[data-page="home"] .plate div{border-right-color:rgba(255,255,255,.14)}
+[data-page="home"] .plate b{color:#fff}
+[data-page="home"] .plate small{color:#9fc3dc}
+@media (max-width:720px){[data-page="home"] .plate div{border-bottom-color:rgba(255,255,255,.14)}}
+/* hero entrance */
+[data-page="home"] .hero .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+[data-page="home"] .hero .wrap>*:nth-child(2){animation-delay:.08s}
+[data-page="home"] .hero .wrap>*:nth-child(3){animation-delay:.16s}
+[data-page="home"] .hero .wrap>*:nth-child(4){animation-delay:.24s}
+[data-page="home"] .hero .wrap>*:nth-child(5){animation-delay:.32s}
+@keyframes rise{from{opacity:.15;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* who we are: offset frame on photo */
+[data-page="home"] .split img{box-shadow:18px 18px 0 0 #d6effa}
+
+/* solutions: grey band, tiles flip to navy on hover */
+[data-page="home"] section.frost{background:var(--mist)}
+[data-page="home"] .tiles{background:#dbe5ec;border-color:#dbe5ec}
+[data-page="home"] .tile{position:relative;transition:background .25s,color .25s}
+[data-page="home"] .tile::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+[data-page="home"] a.tile:hover{background:var(--deep)}
+[data-page="home"] a.tile:hover::before{transform:scaleX(1)}
+[data-page="home"] a.tile:hover h3{color:#fff}
+[data-page="home"] a.tile:hover p{color:#b9d0e0}
+[data-page="home"] a.tile:hover .ic,[data-page="home"] a.tile:hover .more{color:var(--cyan-soft)}
+
+/* industries: photo tiles with navy fade and white type */
+[data-page="home"] .ind{background:var(--deep);border:0;color:#fff}
+[data-page="home"] .ind img{opacity:.85}
+[data-page="home"] .ind:hover img{opacity:.95;transform:scale(1.06)}
+[data-page="home"] .ind::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,37,63,0) 25%,rgba(0,37,63,.92) 100%);transition:background .3s}
+[data-page="home"] .ind:hover::after{background:linear-gradient(180deg,rgba(0,58,99,.15) 0%,rgba(0,37,63,.95) 100%)}
+[data-page="home"] .ind div{z-index:1}
+[data-page="home"] .ind h3{color:#fff}
+[data-page="home"] .ind small{color:#cfe3ef}
+
+/* projects: image zoom on hover */
+[data-page="home"] .pcard{overflow:hidden}
+[data-page="home"] .pcard img{transition:transform .5s}
+[data-page="home"] .pcard:hover img{transform:scale(1.05)}
+[data-page="home"] .pcard:hover{box-shadow:0 14px 30px -18px rgba(0,37,63,.45)}
+
+/* trust band: navy with logos on white chips */
+[data-page="home"] section.trust{background:linear-gradient(120deg,var(--deep) 0%,var(--deep-2) 100%);color:#fff}
+[data-page="home"] section.trust h2{color:#fff}
+[data-page="home"] section.trust .eyebrow{color:var(--cyan-soft)}
+[data-page="home"] section.trust .eyebrow::before{background:var(--cyan)}
+[data-page="home"] .trust .marquee img{filter:none;opacity:1;background:#fff;padding:10px 18px;height:66px;border-radius:3px}
+[data-page="home"] .trust .marquee .track{gap:22px}
+[data-page="home"] .trust .isoband{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#fff}
+[data-page="home"] .trust .isoband:hover{border-color:var(--cyan)}
+[data-page="home"] .trust .isolabel{color:#9fc3dc}
+[data-page="home"] .trust .isob{border-left-color:var(--cyan)}
+[data-page="home"] .trust .isob b{color:#fff}
+[data-page="home"] .trust .isob small{color:#9fc3dc}
+[data-page="home"] .trust .isoband .more{color:var(--cyan-soft)}
+
+/* appreciation: soft sky wash */
+[data-page="home"] #appreciation{background:linear-gradient(180deg,#e9f4fb 0%,#f7fbfd 100%)}
+[data-page="home"] .pull{border-left-color:var(--cyan)}
+[data-page="home"] .lcard:hover{box-shadow:0 14px 30px -18px rgba(0,37,63,.45)}
+
+@media (prefers-reduced-motion:reduce){
+ [data-page="home"] .hero .bg,[data-page="home"] .hero .wrap>*{animation:none}
+ [data-page="home"] .pcard img,[data-page="home"] .ind img{transition:none}
+ .marquee img[aria-hidden="true"]{display:none}
+}
+
+/* ===== Photo backgrounds (HVAC spaces) ===== */
+[data-page="home"] section.frost{background:linear-gradient(rgba(242,246,249,.90),rgba(242,246,249,.94)),url(img/rajaram-plantroom.jpg) center/cover}
+[data-page="home"] #appreciation{background:linear-gradient(rgba(233,244,251,.90),rgba(247,251,253,.95)),url(img/envalior-ahu1.jpg) center 60%/cover}
+.band{background:linear-gradient(100deg,rgba(0,37,63,.94) 0%,rgba(0,58,99,.86) 55%,rgba(0,71,119,.70) 100%),url(img/rajaram-ahu.jpg) center 40%/cover;padding-block:72px}
+.band .btn-primary{background:var(--cyan);color:var(--deep)}
+.band .btn-primary:hover{background:#3cc0f0}
+@media (min-width:1000px) and (hover:hover){
+ [data-page="home"] section.frost,[data-page="home"] #appreciation,.band{background-attachment:fixed}
+}
+@media (prefers-reduced-motion:reduce){[data-page="home"] section.frost,[data-page="home"] #appreciation,.band{background-attachment:scroll}}
+
+/* ===== Dropdown menus ===== */
+.dd{position:relative;display:flex}
+.dd>a::after{content:"";display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-3px) rotate(45deg);opacity:.6}
+.ddm{position:absolute;top:100%;left:0;min-width:250px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--brand);box-shadow:0 18px 40px -20px rgba(0,37,63,.35);display:none;flex-direction:column;padding:6px 0;z-index:60}
+.dd:hover .ddm,.dd:focus-within .ddm{display:flex}
+.dd.closed .ddm{display:none}
+nav.main .ddm a{padding:11px 18px;border-bottom:0;font-size:.9rem;white-space:nowrap}
+nav.main .ddm a:hover{background:var(--ice);border-bottom:0}
+@media (max-width:1320px){header.site .wrap{gap:12px}nav.main a{padding-inline:6px;font-size:.86rem}}
+@media (max-width:1180px){
+ .dd{display:block}
+ .dd>a{display:block}
+ .ddm{position:static;display:flex;border:0;box-shadow:none;padding:0 0 6px 14px;min-width:0}
+ nav.main .ddm a{padding:10px 0;border-bottom:1px solid var(--line);font-size:.88rem;color:var(--steel)}
+ .dd>a::after{display:none}
+ nav.main{max-height:calc(100vh - 90px);overflow-y:auto}
+}
+/* ===== Timeline ===== */
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:2px solid var(--brand)}
+.tl li{position:relative;padding:26px 22px 0 0;display:grid;gap:8px;align-content:start}
+.tl li::before{content:"";position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--cyan,#00a3e0)}
+.tl time{font:600 .8rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-2)}
+.tl b{font:650 1.08rem/1.25 var(--display);color:var(--brand)}
+.tl span{font-size:.9rem;color:var(--steel)}
+@media (max-width:900px){.tl{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--brand);padding-left:22px;gap:22px}.tl li{padding:0}.tl li::before{top:2px;left:-31px}}
+/* ===== CSR steps ===== */
+.csr{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.csr li{display:grid;grid-template-columns:132px 1fr;grid-template-rows:auto auto;column-gap:18px;padding:18px 20px;background:var(--frost);border-left:4px solid #2e9e5b}
+.csr .n{grid-row:1/3;font:750 1.35rem/1.1 var(--display);color:#1d7a45;align-self:center}
+.csr b{font:650 1.05rem/1.25 var(--display);color:var(--brand)}
+.csr li>span:last-child{font-size:.9rem;color:var(--steel)}
+/* ===== Downloads ===== */
+.dls{display:grid;gap:12px;max-width:860px}
+.dl{display:flex;align-items:center;gap:18px;padding:16px 20px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);transition:border-color .2s,background .2s}
+.dl:hover{border-color:var(--brand-2);background:var(--frost)}
+.dlic{flex:none;width:52px;height:60px;display:grid;place-items:center;background:var(--brand);color:#fff;font:600 .78rem/1 var(--mono);letter-spacing:.06em;clip-path:polygon(0 0,72% 0,100% 22%,100% 100%,0 100%)}
+.dl b{display:block;font:650 1.02rem/1.3 var(--display);color:var(--brand)}
+.dl small{color:var(--steel);font-size:.86rem}
+.dl .more{margin-left:auto;font:500 .82rem/1 var(--mono);color:var(--brand-2);white-space:nowrap}
+#journey,#leadership,#news,#downloads,[id^="ind-"]{scroll-margin-top:90px}
+
+/* ===== Home v2: slider, pillars, stats, CSR, sliding letters ===== */
+[data-page="home"] .hs{padding:0}
+.hs .slides{display:grid}
+.hs .slide{grid-area:1/1;position:relative;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility 0s .9s}
+.hs .slide.is-on{opacity:1;visibility:visible;transition:opacity .9s ease}
+.hs .slide .wrap{position:relative;padding-block:clamp(72px,10vw,130px) clamp(130px,13vw,170px);display:grid;gap:24px;align-content:start}
+[data-page="home"] .hero .wrap>*{animation:none}
+[data-page="home"] .hs .slide.is-on .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+[data-page="home"] .hs .slide.is-on .wrap>*:nth-child(2){animation-delay:.08s}
+[data-page="home"] .hs .slide.is-on .wrap>*:nth-child(3){animation-delay:.16s}
+[data-page="home"] .hs .slide.is-on .wrap>*:nth-child(4){animation-delay:.24s}
+.hs h1{max-width:16ch}
+[data-page="home"] .hero h1 .hl-g{background:linear-gradient(90deg,#8de3a9,#34c172);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hs .hs-ctl{position:absolute;padding-block:0;left:0;right:0;bottom:clamp(86px,9vw,108px);display:flex;align-items:center;gap:14px;z-index:3}
+.hs-arr{width:42px;height:42px;border:1px solid rgba(255,255,255,.45);background:rgba(0,37,63,.35);color:#fff;font-size:1rem;cursor:pointer}
+.hs-arr:hover{background:rgba(255,255,255,.15)}
+.hs-dots{display:flex;gap:8px}
+.hs-dots button{width:28px;height:4px;border:0;padding:0;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,width .3s}
+.hs-dots button.on{background:var(--cyan,#00a3e0);width:46px}
+@media (max-width:640px){.hs .slide .wrap{padding-bottom:150px}.hs .hs-ctl{bottom:88px}.hs-arr{display:none}.hs-dots button{height:5px}}
+/* pillars overlap the hero */
+.pillars{padding-block:0 clamp(40px,6vw,72px);position:relative;z-index:4}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:-70px;background:#fff;box-shadow:0 24px 50px -28px rgba(0,37,63,.45);border-top:4px solid var(--cyan,#00a3e0)}
+.pil{padding:28px 28px 30px;display:grid;gap:10px;align-content:start;border-right:1px solid var(--line)}
+.pil:last-child{border-right:0}
+.pil svg{width:40px;height:40px;color:var(--brand)}
+.pil b{font:650 1.12rem/1.25 var(--display);color:var(--brand)}
+.pil span{font-size:.92rem;color:var(--steel)}
+@media (max-width:820px){.pgrid{grid-template-columns:1fr;margin-top:-50px}.pil{border-right:0;border-bottom:1px solid var(--line)}}
+/* stats band */
+.stats{background:linear-gradient(110deg,var(--deep,#00253f),var(--deep-2,#003a63));color:#fff;padding-block:clamp(44px,6vw,64px)}
+.sgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.sgrid>div{padding:6px 24px;border-left:1px solid rgba(255,255,255,.16);display:grid;gap:8px}
+.sgrid>div:first-child{border-left:0;padding-left:0}
+.sgrid b{font:750 clamp(2.4rem,4.6vw,3.4rem)/1 var(--display);font-stretch:85%;color:#fff;font-variant-numeric:tabular-nums}
+.sgrid small{font:500 .78rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9fc3dc}
+@media (max-width:720px){.sgrid{grid-template-columns:1fr 1fr;row-gap:26px}.sgrid>div:nth-child(3){border-left:0;padding-left:0}}
+/* CSR on home */
+.csrhome{background:linear-gradient(180deg,#eef8f1,#f8fcf9)}
+.csrhome .eyebrow{color:#1d7a45}
+.csrhome .eyebrow::before{background:#2e9e5b}
+.csrhome h2{color:#14532d}
+.csrchips{display:flex;flex-wrap:wrap;gap:10px}
+.csrchips span{padding:9px 13px;background:#fff;border:1px solid #cfe8d8;color:#14532d;font-size:.92rem}
+.csrchips b{color:#1d7a45}
+.btn-green{background:#1d7a45;color:#fff}
+.btn-green:hover{background:#15633a}
+.csrimg{position:relative}
+[data-page="home"] .csrimg img{width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:-18px 18px 0 0 #bfe5cc}
+/* sliding letters */
+.lslider{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.ltrack{display:flex;gap:20px;width:max-content;animation:lslide 48s linear infinite}
+.ltrack .lcard{width:290px;flex:none}
+.lslider:hover .ltrack,.lslider:focus-within .ltrack{animation-play-state:paused}
+@keyframes lslide{to{transform:translateX(calc(-50% - 10px))}}
+.lhint{margin-top:14px;font:400 .78rem/1.4 var(--mono);color:var(--steel)}
+@media (prefers-reduced-motion:reduce){
+ .ltrack{animation:none;width:auto;flex-wrap:wrap}
+ .ltrack .lcard[aria-hidden="true"]{display:none}
+ .lslider{mask-image:none}
+ .hs .slide{transition:none}
+}
+
+/* ===== Subtle green accents (sustainability) ===== */
+:root{--green:#2e9e5b;--green-d:#1d7a45;--green-l:#e9f6ee}
+nav.main a.navgreen{display:inline-flex;align-items:center;gap:6px}
+nav.main a.navgreen .leaf{width:13px;height:13px;color:var(--green)}
+nav.main a.navgreen:hover,nav.main a.navgreen[aria-current="page"]{color:var(--green-d);border-bottom-color:var(--green)}
+.isob.isog{border-left-color:var(--green)!important}
+.isob.isog b{color:var(--green-d)}
+[data-page="home"] .trust .isob.isog b{color:#8de3a9}
+.phero-green{background:linear-gradient(180deg,#f2faf5,#eef7f1)}
+.phero-green .eyebrow{color:var(--green-d)}
+.phero-green .eyebrow::before{background:var(--green)}
+[data-page="sustainability"] .checks li::before{border-color:var(--green)}
+[data-page="sustainability"] .eyebrow{color:var(--green-d)}
+[data-page="sustainability"] .eyebrow::before{background:var(--green)}
+footer a[href="#sustainability"]{color:#8de3a9}
+.pil:nth-child(3) svg{color:var(--green-d)}
+
+/* CSR slide: green button and label */
+[data-page="home"] .hero .btn-primary[href="#sustainability"]{background:#2e9e5b;color:#fff}
+[data-page="home"] .hero .btn-primary[href="#sustainability"]:hover{background:#25874d}
+[data-page="home"] .hs .slide:has(a[href="#sustainability"]) .eyebrow{color:#8de3a9}
+[data-page="home"] .hs .slide:has(a[href="#sustainability"]) .eyebrow::before{background:#34c172}
+
+/* ===== Home v3: fixed CSR banner + certificates ===== */
+.csrtop{position:relative;overflow:hidden;color:#fff;background:#0f3b2a;padding-block:0}
+.csrtop .bg{position:absolute;inset:0;background:url(img/envalior-plant.jpg) center 35%/cover}
+.csrtop .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(9,52,36,.95) 0%,rgba(10,62,44,.88) 50%,rgba(0,58,99,.70) 100%)}
+.csrtop .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px 48px;align-items:center;padding-block:clamp(38px,5vw,56px)}
+.csrtop .eyebrow{color:#8de3a9}
+.csrtop .eyebrow::before{background:#34c172}
+.csrtop h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.7rem);max-width:20ch;margin-top:12px}
+.csrtop .hl-g{background:linear-gradient(90deg,#8de3a9,#34c172);-webkit-background-clip:text;background-clip:text;color:transparent}
+.csrtop p{color:#d4ece0;margin-top:12px;max-width:56ch}
+.ct-side{display:grid;gap:16px;justify-items:start}
+.csrtop .csrchips span{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#e6f5ec}
+.csrtop .csrchips b{color:#8de3a9}
+.csrtop .btn-green{background:#2e9e5b}
+.csrtop .btn-green:hover{background:#34b768}
+@media (max-width:820px){.csrtop .wrap{grid-template-columns:1fr}}
+/* certificates */
+.isocerts{padding-top:clamp(24px,4vw,48px)}
+.cslider{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.ccard{display:grid;grid-template-rows:auto 1fr;background:#fff;border:1px solid var(--line);border-top:3px solid var(--brand);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s}
+.ccard.cg{border-top-color:#2e9e5b}
+.ccard:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(0,37,63,.45)}
+.cimg{display:block;background:var(--frost);padding:16px 16px 0;height:300px;overflow:hidden}
+.cimg img{width:100%;height:auto;display:block;box-shadow:0 6px 18px -8px rgba(0,0,0,.35)}
+.cb{display:grid;gap:4px;padding:16px 18px 18px;border-top:1px solid var(--line)}
+.cb b{font:700 1.15rem/1.2 var(--display);color:var(--brand)}
+.ccard.cg .cb b{color:#1d7a45}
+.cb span{font-size:.92rem;color:var(--ink)}
+.cb small{font:400 .76rem/1.4 var(--mono);color:var(--steel)}
+.cb em{font-style:normal;font:600 .86rem/1.3 var(--body);color:var(--brand-2);margin-top:6px}
+@media (max-width:900px){
+ .cslider{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:8px;margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+ .ccard{flex:0 0 78%;scroll-snap-align:start}
+}
+.cmeta{font:400 .76rem/1.4 var(--mono);color:var(--steel);margin-top:8px}
+.cert .nlink{display:inline-block;margin-top:8px}
+
+/* ===== 1 TRee campaign mark ===== */
+.trlogo{display:grid;gap:6px;justify-items:start;color:#fff}
+.trw{font:800 clamp(2.6rem,5vw,3.8rem)/.95 var(--display);font-stretch:90%;letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.trw .tr1{color:#fff}
+.trw .ee{position:relative;color:#9ad14b;display:inline-block}
+.trw .sprout{position:absolute;width:.62em;height:.62em;right:-.08em;top:-.5em;color:#9ad14b}
+.trt{font:700 1.05rem/1.2 var(--display);color:#fff;letter-spacing:.01em}
+.trs{font:500 .7rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#b9dfc5}
+.trlogo-light .trw,.trlogo-light .trw .tr1,.trlogo-light .trt{color:#14532d}
+.trlogo-light .trw .ee,.trlogo-light .trw .sprout{color:#4f9a1f}
+.trlogo-light .trs{color:#3f7a55}
+.trlogo-light{margin-bottom:6px}
+.csrtop .wrap{grid-template-columns:auto minmax(0,1fr) auto;gap:24px clamp(28px,4vw,56px)}
+.csrtop .ct-text{display:grid;gap:14px;justify-items:start}
+.csrtop .ct-text p{margin:0}
+.ct-count{display:grid;gap:4px;padding-left:clamp(20px,3vw,36px);border-left:1px solid rgba(255,255,255,.2)}
+.ct-count b{font:800 clamp(2.4rem,4.4vw,3.2rem)/1 var(--display);font-stretch:85%;color:#9ad14b;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ct-count small{font:500 .74rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#cfe8d8;max-width:22ch}
+@media (max-width:980px){.csrtop .wrap{grid-template-columns:1fr}.ct-count{border-left:0;padding-left:0}}
+.sgrid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.sg-green b{color:#9ad14b!important}
+.sgrid b{white-space:nowrap}
+.trlogo-light{margin-top:26px}
+@media (max-width:560px){.sg-green{grid-column:1/-1;border-left:0!important;padding-left:0!important}}
+@media (max-width:900px){.sgrid{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:26px}.sgrid>div:nth-child(4){border-left:0;padding-left:0}}
+@media (max-width:560px){.sgrid{grid-template-columns:1fr 1fr}.sgrid>div:nth-child(4){border-left:1px solid rgba(255,255,255,.16);padding-left:24px}.sgrid>div:nth-child(odd){border-left:0;padding-left:0}}
+
+/* simple dot bullets */
+.checks.dots li{grid-template-columns:14px 1fr}
+.checks.dots li::before{width:7px;height:7px;margin-top:10px;border:0;border-radius:50%;background:var(--brand);transform:none}
+
+/* compact CSR banner */
+.csrtop .wrap{padding-block:clamp(20px,2.6vw,30px);gap:14px clamp(24px,3vw,40px);align-items:center}
+.csrtop .trw{font-size:clamp(2.1rem,3.6vw,2.8rem)}
+.csrtop .trlogo{gap:3px}
+.csrtop .trt{font-size:.95rem}
+.csrtop .trs{font-size:.64rem}
+.csrtop .ct-text{gap:10px}
+.csrtop .ct-text p{color:#eef8f2;font-size:1rem;line-height:1.5;max-width:52ch}
+.csrtop .btn-green{padding:10px 16px;font-size:.9rem}
+.ct-count{gap:2px;padding-left:clamp(16px,2vw,28px)}
+.ct-count b{font-size:clamp(2rem,3.4vw,2.6rem)}
+.ct-count small{font-size:.68rem;max-width:20ch;color:#dff1e6}
+.csrtop .bg::after{background:linear-gradient(100deg,rgba(9,52,36,.97) 0%,rgba(10,62,44,.93) 55%,rgba(0,58,99,.82) 100%)}
+@media (max-width:980px){.csrtop .wrap{padding-block:22px;gap:14px}.csrtop .ct-text p{font-size:.95rem}.ct-count{padding-left:0;border-left:0;display:flex;align-items:baseline;gap:10px}.ct-count small{max-width:none}}
+
+/* ===== Appreciation letters carousel ===== */
+.lcar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center}
+.lvp{overflow:hidden;padding:6px 2px 10px}
+.ltrack2{display:flex;column-gap:20px;transition:transform .6s cubic-bezier(.3,.7,.2,1)}
+.ltrack2 .lcard{flex:0 0 calc((100% - 40px)/3)}
+@media (max-width:1000px){.ltrack2 .lcard{flex-basis:calc((100% - 20px)/2)}}
+@media (max-width:640px){.ltrack2 .lcard{flex-basis:100%}.lcar{grid-template-columns:minmax(0,1fr)}.lc-arr{display:none}}
+.lc-arr{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--brand);font-size:1.05rem;cursor:pointer;box-shadow:0 8px 20px -12px rgba(0,37,63,.4);transition:background .2s,color .2s}
+.lc-arr:hover{background:var(--brand);color:#fff}
+.lc-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;padding-inline:62px}
+@media (max-width:640px){.lc-foot{padding-inline:0}}
+.lc-dots{display:flex;gap:8px}
+.lc-dots button{width:26px;height:4px;padding:0;border:0;background:#c9d6e0;cursor:pointer;transition:width .3s,background .3s}
+.lc-dots button.on{width:44px;background:var(--brand)}
+.lc-foot .lhint{margin:0}
+@media (prefers-reduced-motion:reduce){.ltrack2{transition:none}}
+
+/* ===== Inner pages: home-style headers, bands and cards ===== */
+.phero{background:var(--deep,#00253f);color:#fff;border-bottom:0;padding-block:clamp(72px,9vw,118px) clamp(50px,6vw,76px)}
+.phero .bg{opacity:1!important;animation:kb 26s ease-in-out infinite alternate;transform-origin:70% 40%}
+.phero .bg::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse at 88% 100%,rgba(0,163,224,.22),transparent 55%),
+  linear-gradient(100deg,rgba(0,37,63,.96) 0%,rgba(0,45,78,.88) 48%,rgba(0,58,99,.55) 80%,rgba(0,71,119,.35) 100%)}
+.phero h1{color:#fff;max-width:22ch}
+.phero .lede{color:#cfe0ee}
+.phero .eyebrow{color:var(--cyan-soft,#7fd6f5)}
+.phero .eyebrow::before{background:var(--cyan,#00a3e0)}
+.phero .crumbs,.phero .crumbs a{color:#9fc3dc}
+.phero .crumbs a:hover{color:#fff}
+.phero .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.phero .wrap>*:nth-child(2){animation-delay:.06s}.phero .wrap>*:nth-child(3){animation-delay:.12s}.phero .wrap>*:nth-child(4){animation-delay:.18s}
+/* sustainability header in deep green */
+.phero.phero-green{background:#0f3b2a}
+.phero.phero-green .bg::after{background:linear-gradient(100deg,rgba(9,52,36,.96) 0%,rgba(10,62,44,.88) 50%,rgba(0,58,99,.55) 100%)}
+.phero.phero-green .eyebrow{color:#8de3a9}
+.phero.phero-green .eyebrow::before{background:#34c172}
+.phero .trlogo-light .trw,.phero .trlogo-light .trw .tr1,.phero .trlogo-light .trt{color:#fff}
+.phero .trlogo-light .trw .ee,.phero .trlogo-light .trw .sprout{color:#9ad14b}
+.phero .trlogo-light .trs{color:#b9dfc5}
+/* navy bands on inner pages */
+section.dark{background:linear-gradient(110deg,var(--deep,#00253f),var(--deep-2,#003a63));color:#fff}
+section.dark h2{color:#fff}
+section.dark .eyebrow{color:var(--cyan-soft,#7fd6f5)}
+section.dark .eyebrow::before{background:var(--cyan,#00a3e0)}
+section.dark .lede{color:#cfe0ee}
+section.dark .why{background:rgba(255,255,255,.12)}
+section.dark .why div{background:rgba(255,255,255,.04)}
+section.dark .why b{color:#fff}
+section.dark .why span{color:#b9d0e0}
+/* tiles everywhere flip to navy on hover */
+.tile{position:relative;transition:background .25s,color .25s}
+.tile::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--cyan,#00a3e0);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+a.tile:hover{background:var(--deep,#00253f)}
+a.tile:hover::before{transform:scaleX(1)}
+a.tile:hover h3{color:#fff}
+a.tile:hover p{color:#b9d0e0}
+a.tile:hover .ic,a.tile:hover .more{color:var(--cyan-soft,#7fd6f5)}
+/* project cards zoom everywhere */
+.pcard{overflow:hidden}
+.pcard img{transition:transform .5s}
+.pcard:hover img{transform:scale(1.05)}
+.pcard:hover{box-shadow:0 14px 30px -18px rgba(0,37,63,.45)}
+/* solution / industry rows: framed photos, alternating bands */
+.sol .block img{box-shadow:14px 14px 0 0 #d6effa;transition:transform .5s}
+.sol:hover .block img{transform:translateY(-3px)}
+[data-page="solutions"] .sol:nth-child(even),[data-page="industries"] .sol:nth-child(even){direction:rtl}
+[data-page="solutions"] .sol:nth-child(even)>*,[data-page="industries"] .sol:nth-child(even)>*{direction:ltr}
+.sol .chips span{transition:background .2s,border-color .2s}
+.sol .chips a:hover span{background:var(--ice);border-color:var(--brand-2)}
+/* contact + office cards */
+.office{border-top:3px solid var(--brand);transition:box-shadow .2s}
+.office:hover{box-shadow:0 14px 30px -20px rgba(0,37,63,.4)}
+form.enq{border-top:3px solid var(--cyan,#00a3e0)}
+/* frost sections on inner pages get the faint plant-room texture */
+.page:not([data-page="home"]) section.frost{background:linear-gradient(rgba(242,246,249,.93),rgba(242,246,249,.96)),url(img/rajaram-plantroom.jpg) center/cover}
+@media (prefers-reduced-motion:reduce){.phero .bg,.phero .wrap>*{animation:none}}
 </style>
 </head>
 <body>
@@ -457,7 +854,12 @@ nav.main a{padding-inline:8px;font-size:.9rem}
   <a class="logo" href="#home" aria-label="Infrigidate home"><img src="img/infrigidate-logo.png" alt="Infrigidate"></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
   <nav class="main" id="nav">
-    <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#capabilities">Capabilities</a><a href="#industries">Industries</a><a href="#projects">Projects</a><a href="#quality">Quality &amp; Safety</a><a href="#tools">Tools</a><a href="#careers">Careers</a><a href="#contact">Contact</a>
+    <div class="dd"><a href="#about">About</a><div class="ddm"><a href="#about">Company overview</a><a href="#journey">Our journey</a><a href="#leadership">Leadership</a></div></div>
+    <div class="dd"><a href="#solutions">Solutions</a><div class="ddm"><a href="#solutions">Solutions</a><a href="#capabilities">Capabilities</a></div></div>
+    <div class="dd"><a href="#industries">Industries</a><div class="ddm"><a href="#ind-pharma">Pharmaceutical &amp; Life Sciences</a><a href="#ind-healthcare">Healthcare &amp; Hospitals</a><a href="#ind-cleanroom">Cleanrooms &amp; Controlled Environments</a><a href="#ind-industrial">Industrial &amp; Manufacturing</a><a href="#ind-warehousing">Warehousing &amp; Logistics</a><a href="#ind-commercial">Commercial &amp; Institutional</a></div></div>
+    <a href="#projects">Projects</a><a href="#quality">Quality &amp; Safety</a><a href="#sustainability" class="navgreen"><svg class="leaf" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 2.5C7 2.5 3 5.5 3 10c0 1.4.5 2.6 1.2 3.4C5 9.5 7.7 7.3 10.5 6.2 8 7.8 6.1 10 5.3 13.9c.8.4 1.6.6 2.5.6 4.5 0 6.2-4.5 5.7-12z" fill="currentColor"/></svg>Sustainability</a>
+    <div class="dd"><a href="#insights">Insights</a><div class="ddm"><a href="#news">News &amp; outreach</a><a href="#tools">Engineering tools</a><a href="#downloads">Downloads</a></div></div>
+    <a href="#careers">Careers</a><a href="#contact">Contact</a>
   </nav>
   <a class="btn btn-dark cta" href="#contact">Request a Proposal</a>
 </div></header>
@@ -466,52 +868,97 @@ nav.main a{padding-inline:8px;font-size:.9rem}
 
 <!-- ===================== HOME ===================== -->
 <div class="page" data-page="home">
-  <section class="hero">
-    <div class="bg" role="img" aria-label="HVAC ducting installed by Infrigidate at a pharmaceutical plant"></div>
+  <section class="csrtop" aria-label="1 TRee: Sustainability and CSR">
+    <div class="bg" role="img" aria-label="Envalior India facility, one of the first projects in the 1 TRee programme"></div>
     <div class="wrap">
-      <div class="eyebrow">HVAC &amp; Integrated MEP Contracting</div>
-      <h1>Engineering precision environments across India.</h1>
-      <p class="lede">We design, build, commission and maintain HVAC, electrical and control systems for pharmaceutical, healthcare and industrial facilities, with one team accountable from tender to handover.</p>
-      <div class="actions"><a class="btn btn-primary arrow" href="#contact">Request a Proposal</a><a class="btn btn-ghost" href="#projects">Explore Projects</a></div>
-      <div class="plate">
-        <div><b>25+</b><small>Engineering professionals</small></div>
-        <div><b>2</b><small>Regional offices · Pune &amp; Indore</small></div>
-        <div><b>12+</b><small>Industrial clients</small></div>
-        <div><b>2–4</b><small>Months · typical turnkey delivery</small></div>
+      <div class="trlogo " role="img" aria-label="1 TRee: One TR. One Tree. Climate Responsibility for the Built Environment"><span class="trw"><span class="tr1">1</span> TR<span class="ee">ee<svg class="sprout" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 38V20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M20 22C20 11 27 4 38 3c0 11-7 18-18 19z" fill="currentColor"/><path d="M20 26C20 18 14 12 5 12c0 8 6 14 15 14z" fill="currentColor" opacity=".75"/></svg></span></span><span class="trt">One TR. One Tree.</span><span class="trs">Climate Responsibility for the Built Environment</span></div>
+      <div class="ct-text">
+        <p>For every TR of cooling we install, we plant a tree, plus more to offset the embodied carbon of the system itself. Started with Envalior India and Jotun India.</p>
+        <a class="btn btn-green arrow" href="#sustainability">Our commitment</a>
       </div>
+      <div class="ct-count"><b><span class="cnt" data-to="140">140</span> TR</b><small>of installed cooling offset with trees so far</small></div>
     </div>
   </section>
+
+  <section class="hero hs" aria-roledescription="carousel" aria-label="Highlights">
+    <div class="slides">
+      <div class="slide is-on" aria-roledescription="slide" aria-label="1 of 2">
+        <div class="bg" style="background-image:url(img/rajaram-duct.jpg)" role="img" aria-label="HVAC ducting installed by Infrigidate at a pharmaceutical plant"></div>
+        <div class="wrap">
+          <div class="eyebrow">HVAC &amp; Integrated MEP Contracting</div>
+          <h1>Engineering <span class="hl">precision</span> environments across India.</h1>
+          <p class="lede">We design, build, commission and maintain HVAC, electrical and control systems for pharmaceutical, healthcare and industrial facilities, with one team accountable from tender to handover.</p>
+          <div class="actions"><a class="btn btn-primary arrow" href="#contact">Request a Proposal</a><a class="btn btn-ghost" href="#projects">Explore Projects</a></div>
+        </div>
+      </div>
+      <div class="slide" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true">
+        <div class="bg" style="background-image:url(img/rajaram-plantroom.jpg)" role="img" aria-label="Air handling units in a pharmaceutical plant room"></div>
+        <div class="wrap">
+          <div class="eyebrow">Cleanrooms &amp; Pharma HVAC</div>
+          <h1><span class="hl">Controlled</span> environments, delivered turnkey.</h1>
+          <p class="lede">Temperature, humidity and pressure held to specification for QC labs, production and hygroscopic-material areas, documented for audit.</p>
+          <div class="actions"><a class="btn btn-primary arrow" href="#ind-cleanroom" tabindex="-1">Cleanroom solutions</a><a class="btn btn-ghost" href="#appreciation" tabindex="-1">Client letters</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="hs-ctl wrap">
+      <button type="button" class="hs-arr" data-hs="-1" aria-label="Previous slide">←</button>
+      <div class="hs-dots" role="tablist"><button type="button" class="on" data-go="0" aria-label="Slide 1"></button><button type="button" data-go="1" aria-label="Slide 2"></button></div>
+      <button type="button" class="hs-arr" data-hs="1" aria-label="Next slide">→</button>
+    </div>
+  </section>
+
+  <section class="pillars"><div class="wrap">
+    <div class="pgrid">
+      <div class="pil"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 9-10"/></svg><b>Project excellence</b><span>Buildable designs, planned sites and schedules that hold.</span></div>
+      <div class="pil"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 5l13 5v9c0 8-6 14-13 16C13 33 7 27 7 19v-9z"/><path d="M14 20l4 4 8-8"/></svg><b>Single-point accountability</b><span>One technical owner from tender to handover and beyond.</span></div>
+      <div class="pil"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 32V14l12-7 12 7v18z"/><path d="M15 32v-9h10v9"/><path d="M13 16h14"/></svg><b>Compliance-ready quality</b><span>ISO 9001, 14001 and 45001 systems with audit-ready documentation.</span></div>
+    </div>
+  </div></section>
+
+  <section class="isocerts" id="certificates"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Certifications</div><h2>Certified for quality, environment and safety.</h2>
+      <p class="lede">Our integrated management system is certified by Absolute Quality Certification (AQC), accredited by UAF, for the design engineering, supply, installation, testing and commissioning of HVAC, refrigeration and process cooling systems.</p></div>
+    <div class="cslider">
+      <a class="ccard" href="docs/ISO-9001-2015-Infrigidate.pdf" target="_blank" rel="noopener"><span class="cimg"><img src="img/cert-iso9001.jpg" alt="ISO 9001:2015 certificate of registration for Infrigidate Engineers India Pvt. Ltd." loading="lazy"></span><span class="cb"><b>ISO 9001:2015</b><span>Quality Management System</span><small>Cert. no. 26UQLJ28 · valid to 24 Aug 2029</small><em>View certificate (PDF) ↗</em></span></a>
+      <a class="ccard cg" href="docs/ISO-14001-2015-Infrigidate.pdf" target="_blank" rel="noopener"><span class="cimg"><img src="img/cert-iso14001.jpg" alt="ISO 14001:2015 certificate of registration for Infrigidate Engineers India Pvt. Ltd." loading="lazy"></span><span class="cb"><b>ISO 14001:2015</b><span>Environmental Management System</span><small>Cert. no. 26UELM26 · valid to 24 Aug 2029</small><em>View certificate (PDF) ↗</em></span></a>
+      <a class="ccard" href="docs/ISO-45001-2018-Infrigidate.pdf" target="_blank" rel="noopener"><span class="cimg"><img src="img/cert-iso45001.jpg" alt="ISO 45001:2018 certificate of registration for Infrigidate Engineers India Pvt. Ltd." loading="lazy"></span><span class="cb"><b>ISO 45001:2018</b><span>Occupational Health &amp; Safety</span><small>Cert. no. 26UOLY36 · valid to 24 Aug 2029</small><em>View certificate (PDF) ↗</em></span></a>
+    </div>
+  </div></section>
 
   <section><div class="wrap split">
     <div class="block">
       <div class="eyebrow">Who we are</div>
       <h2>From design intent to site execution to after-sales performance.</h2>
       <p class="lede">Infrigidate Engineers India is an independent HVAC contracting company founded by professionals with extensive experience in high-tech HVAC infrastructure. We are built on strong engineering fundamentals, disciplined execution, and transparent handover and service.</p>
-      <ul class="checks">
-        <li>Design-assist mindset supporting clients, consultants and PMCs</li>
-        <li>Single-point execution responsibility</li>
-        <li>Continued involvement beyond commissioning and handover</li>
+      <ul class="checks dots">
+        <li><span><b>Single-point accountability.</b> One technical owner from tender to handover.</span></li>
+        <li><span><b>Execution-first engineering.</b> Designs that are buildable on site, on schedule.</span></li>
+        <li><span><b>Commissioning-focused.</b> Systems proven against design criteria, not just installed.</span></li>
+        <li><span><b>Long-term performance.</b> We stay involved after handover.</span></li>
       </ul>
-      <div><a class="btn btn-line arrow" href="#about">About Infrigidate</a></div>
+      <div><a class="btn btn-line arrow" href="#about">Why Infrigidate</a></div>
     </div>
     <img src="img/rajaram-plantroom.jpg" alt="Air handling units and piping in a plant room executed by Infrigidate" loading="lazy">
+  </div></section>
+  <section class="stats"><div class="wrap">
+    <div class="sgrid">
+      <div><b><span class="cnt" data-to="50">50</span>+</b><small>Projects delivered</small></div>
+      <div><b><span class="cnt" data-to="20">20</span>+</b><small>Clientele</small></div>
+      <div><b><span class="cnt" data-to="6">6</span></b><small>Industries served</small></div>
+      <div><b><span class="cnt" data-to="2">2</span></b><small>Regional offices · Pune &amp; Pithampur</small></div>
+      <div class="sg-green"><b><span class="cnt" data-to="140">140</span> TR</b><small>CO₂ offset with trees</small></div>
+    </div>
   </div></section>
 
   <section class="frost"><div class="wrap">
     <div class="sec-head"><div class="eyebrow">Solutions</div><h2>Everything that keeps a critical space in specification.</h2></div>
     <div class="tiles" id="homeSolutions"></div>
   </div></section>
-
   <section><div class="wrap">
     <div class="sec-head"><div class="eyebrow">Industries</div><h2>Built for regulated and precision facilities.</h2></div>
     <div class="inds" id="homeInds"></div>
   </div></section>
-
-  <section class="ice"><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">End-to-end contracting life cycle</div><h2>One accountable team at every stage.</h2></div>
-    <ol class="life" id="homeLife"></ol>
-  </div></section>
-
   <section><div class="wrap">
     <div class="sec-head" style="max-width:none;display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:16px">
       <div style="display:grid;gap:14px"><div class="eyebrow">Featured projects</div><h2>Recent work.</h2></div>
@@ -519,40 +966,20 @@ nav.main a{padding-inline:8px;font-size:.9rem}
     </div>
     <div class="projs" id="homeProjs"></div>
   </div></section>
-
-  <section class="dark"><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Why Infrigidate</div><h2>What makes us different.</h2></div>
-    <div class="why" id="homeWhy"></div>
-  </div></section>
-
-  <section><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Organisations that trust us</div><h2>Our clients.</h2></div>
-    <div class="marquee"><div class="track" id="marquee"></div></div>
-  </div></section>
-
-  <section class="frost" id="certifications"><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Certifications</div><h2>ISO certified for quality, environment and safety.</h2>
-      <p class="lede">Infrigidate Engineers India Pvt. Ltd. operates an integrated management system certified to three international ISO standards.</p></div>
-    <div class="certs"><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>9001</b><em>2015</em></span></div><div><h3>ISO 9001:2015</h3><div class="ctype">Quality Management System</div><p>Consistent design, execution and handover. Every project follows documented procedures, inspections and test records.</p></div></article><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>14001</b><em>2015</em></span></div><div><h3>ISO 14001:2015</h3><div class="ctype">Environmental Management System</div><p>Controlled waste, refrigerant handling and site practices that reduce environmental impact on every job.</p></div></article><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>45001</b><em>2018</em></span></div><div><h3>ISO 45001:2018</h3><div class="ctype">Occupational Health &amp; Safety</div><p>Planned, risk-assessed work on live plants and cleanrooms, with job safety analysis before every task.</p></div></article></div>
-    <div class="stds-wrap"><div class="stds-label">We also work to</div><div class="stds"><span>GMP</span><span>NABH / WHO</span><span>ASHRAE</span><span>ISHRAE</span><span>SMACNA</span></div></div>
-  </div></section>
-
   <section class="ice" id="appreciation"><div class="wrap">
     <div class="sec-head"><div class="eyebrow">Client appreciation</div><h2>In our clients' words.</h2></div>
     <blockquote class="pull">“We have no hesitation in recommending M/s. Infrigidate Engineers India Pvt Ltd for HVAC work involving design, detailing, timely completion with good workmanship.”<cite>Written by each of the clients below on their appreciation letters</cite></blockquote>
-    <div class="lgrid" data-letters></div>
-  </div></section>
-
-  <section><div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Engineering tools</div><h2>Size it in seconds.</h2>
-      <p class="lede">Free calculators from our engineering team for early-stage HVAC checks.</p></div>
-    <div class="tiles">
-      <a class="tile" href="#tools-duct"><svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="14" width="24" height="16"/><path d="M28 18h12v8H28"/><path d="M10 22h12M18 18l4 4-4 4"/></svg><h3>Duct sizing</h3><p>Round and rectangular sizes by equal friction or velocity, with velocity and pressure drop.</p><span class="more arrow">Open calculator </span></a>
-      <a class="tile" href="#tools-pipe"><svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16h16a8 8 0 0 1 8 8v16"/><path d="M4 26h12a2 2 0 0 1 2 2v12"/><path d="M4 12v18M24 40h8"/></svg><h3>Pipe sizing</h3><p>Chilled and condenser water pipe selection from TR or flow, with friction and velocity checks.</p><span class="more arrow">Open calculator </span></a>
-      <a class="tile" href="#tools-load"><svg class="ic" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2"><circle cx="22" cy="22" r="7"/><path d="M22 4v6M22 34v6M4 22h6M34 22h6M9 9l4 4M31 31l4 4M35 9l-4 4M13 31l-4 4"/></svg><h3>Heat load estimate</h3><p>Rough tonnage for offices, retail, server rooms and more, with fresh air per ASHRAE 62.1.</p><span class="more arrow">Open calculator </span></a>
+    <div class="lcar" aria-roledescription="carousel" aria-label="Client appreciation letters">
+      <button type="button" class="lc-arr" data-lc="-1" aria-label="Previous letters">←</button>
+      <div class="lvp"><div class="ltrack2" data-letters></div></div>
+      <button type="button" class="lc-arr" data-lc="1" aria-label="Next letters">→</button>
     </div>
+    <div class="lc-foot"><div class="lc-dots"></div><span class="lhint">Select a letter to read it in full</span></div>
   </div></section>
-
+  <section class="trust"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Organisations that trust us</div><h2>Our clients.</h2></div>
+    <div class="marquee"><div class="track" id="marquee"></div></div>
+  </div></section>
   <section><div class="wrap">
     <div class="sec-head"><div class="eyebrow">News &amp; outreach</div><h2>Latest from Infrigidate.</h2>
       <p class="lede">Company updates from our <a href="https://www.linkedin.com/company/infrigidate" target="_blank" rel="noopener">LinkedIn page</a>.</p></div>
@@ -590,6 +1017,7 @@ nav.main a{padding-inline:8px;font-size:.9rem}
         </article>
       </div>
     </div>
+    <a class="toolband" href="#tools"><span class="isolabel">Free engineering tools</span><span>Duct sizing</span><span>Pipe sizing</span><span>Heat load estimate</span><span class="more arrow">Open calculators </span></a>
   </div></section>
 </div>
 
@@ -602,7 +1030,7 @@ nav.main a{padding-inline:8px;font-size:.9rem}
   </div></div>
   <section><div class="wrap cols2">
     <div class="block"><div class="eyebrow">Our story</div><h2>Bridging design intent and site reality.</h2>
-      <p class="lede">Infrigidate Engineers India Pvt. Ltd. was established in 2024 in Pune by professionals from high-tech HVAC infrastructure projects. We have since extended operations to Madhya Pradesh with an office at Pithampur, and today a team of 25+ professionals delivers projects across India.</p></div>
+      <p class="lede">Infrigidate Engineers India Pvt. Ltd. was established in 2024 in Pune by professionals from high-tech HVAC infrastructure projects. We have since extended operations to Madhya Pradesh with an office at Pithampur, and today our team delivers projects across India.</p></div>
     <div class="block"><h3>Our operating model</h3><ul class="checks">
       <li>Design-assist mindset supporting clients, consultants and PMCs</li>
       <li>Strong engineering ownership from early project stages</li>
@@ -610,7 +1038,26 @@ nav.main a{padding-inline:8px;font-size:.9rem}
       <li>Integrated coordination of allied services</li>
       <li>Continued involvement beyond commissioning and handover</li></ul></div>
   </div></section>
-  <section class="frost"><div class="wrap cols2">
+  <section class="stats"><div class="wrap">
+    <div class="sgrid">
+      <div><b><span class="cnt" data-to="50">50</span>+</b><small>Projects delivered</small></div>
+      <div><b><span class="cnt" data-to="20">20</span>+</b><small>Clientele</small></div>
+      <div><b><span class="cnt" data-to="6">6</span></b><small>Industries served</small></div>
+      <div><b><span class="cnt" data-to="2">2</span></b><small>Regional offices · Pune &amp; Pithampur</small></div>
+      <div class="sg-green"><b><span class="cnt" data-to="140">140</span> TR</b><small>CO₂ offset with trees</small></div>
+    </div>
+  </div></section>
+  <section class="frost" id="journey"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Our journey</div><h2>Built project by project.</h2></div>
+    <ol class="tl">
+      <li><time>2024</time><b>Founded in Pune</b><span>Infrigidate Engineers India Pvt. Ltd. is established at Kharadi, Pune, as an HVAC design-and-build contractor.</span></li>
+      <li><time>2025</time><b>Pharma and R&amp;D projects</b><span>HVAC for Rajaram Consumer Care's pharma QC area, Knorr-Bremse's rail compressor R&amp;D facility and Fresenius Kabi's finished-goods warehouse.</span></li>
+      <li><time>Dec 2025</time><b>Madhya Pradesh</b><span>A second office opens at Pithampur to serve clients across central India.</span></li>
+      <li><time>2026</time><b>Turnkey low-RH production</b><span>Mixing and packaging areas for Cilicant, Pune, held at NMT 23 °C and 40% RH.</span></li>
+      <li><time>Today</time><b>Certified and growing</b><span>ISO 9001, 14001 and 45001 certified, with projects across Maharashtra and Madhya Pradesh.</span></li>
+    </ol>
+  </div></section>
+  <section><div class="wrap cols2">
     <div class="block"><div class="eyebrow">Where we add maximum value</div><h2>The projects others find hard.</h2></div>
     <ul class="checks">
       <li>Design collaboration with simulation studies for precision environment conditions</li>
@@ -619,7 +1066,12 @@ nav.main a{padding-inline:8px;font-size:.9rem}
       <li>Facilities where long-term performance matters</li>
       <li>Compliance-driven and regulated facilities</li></ul>
   </div></section>
-  <section><div class="wrap">
+  <section class="ice"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Why Infrigidate</div><h2>What makes us different.</h2></div>
+    <div class="why" id="homeWhy"></div>
+  </div></section>
+
+  <section id="leadership"><div class="wrap">
     <div class="sec-head"><div class="eyebrow">Leadership</div><h2>Hands-on at every stage.</h2>
       <p class="lede">Our leadership brings extensive experience in HVAC engineering, project execution and critical facility delivery, with a strong background in pharmaceutical, healthcare and industrial projects and in fast-track delivery.</p></div>
     <div class="offices" style="grid-template-columns:minmax(0,640px)">
@@ -670,7 +1122,7 @@ nav.main a{padding-inline:8px;font-size:.9rem}
 
 <!-- ===================== INDUSTRIES ===================== -->
 <div class="page" data-page="industries" hidden>
-  <div class="phero"><div class="bg" style="background-image:url(img/cilicant-cleanroom.jpg)"></div><div class="wrap">
+  <div class="phero"><div class="bg" style="background-image:url(img/jotun-plant.jpg)"></div><div class="wrap">
     <div class="crumbs"><a href="#home">Home</a> / Industries</div>
     <div class="eyebrow">Industries</div><h1>Where conditions are part of the product.</h1>
   </div></div>
@@ -714,7 +1166,7 @@ nav.main a{padding-inline:8px;font-size:.9rem}
   </div></section>
   <section class="ice"><div class="wrap">
     <div class="sec-head"><div class="eyebrow">Certifications</div><h2>Integrated management system.</h2></div>
-    <div class="certs"><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>9001</b><em>2015</em></span></div><div><h3>ISO 9001:2015</h3><div class="ctype">Quality Management System</div><p>Consistent design, execution and handover. Every project follows documented procedures, inspections and test records.</p></div></article><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>14001</b><em>2015</em></span></div><div><h3>ISO 14001:2015</h3><div class="ctype">Environmental Management System</div><p>Controlled waste, refrigerant handling and site practices that reduce environmental impact on every job.</p></div></article><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>45001</b><em>2018</em></span></div><div><h3>ISO 45001:2018</h3><div class="ctype">Occupational Health &amp; Safety</div><p>Planned, risk-assessed work on live plants and cleanrooms, with job safety analysis before every task.</p></div></article></div>
+    <div class="certs"><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>9001</b><em>2015</em></span></div><div><h3>ISO 9001:2015</h3><div class="ctype">Quality Management System</div><p>Consistent design, execution and handover. Every project follows documented procedures, inspections and test records.</p><div class="cmeta">Cert. no. 26UQLJ28 · valid to 24 Aug 2029</div><a class="nlink" href="docs/ISO-9001-2015-Infrigidate.pdf" target="_blank" rel="noopener">View certificate (PDF) ↗</a></div></article><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>14001</b><em>2015</em></span></div><div><h3>ISO 14001:2015</h3><div class="ctype">Environmental Management System</div><p>Controlled waste, refrigerant handling and site practices that reduce environmental impact on every job.</p><div class="cmeta">Cert. no. 26UELM26 · valid to 24 Aug 2029</div><a class="nlink" href="docs/ISO-14001-2015-Infrigidate.pdf" target="_blank" rel="noopener">View certificate (PDF) ↗</a></div></article><article class="cert"><div class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg><span><small>ISO</small><b>45001</b><em>2018</em></span></div><div><h3>ISO 45001:2018</h3><div class="ctype">Occupational Health &amp; Safety</div><p>Planned, risk-assessed work on live plants and cleanrooms, with job safety analysis before every task.</p><div class="cmeta">Cert. no. 26UOLY36 · valid to 24 Aug 2029</div><a class="nlink" href="docs/ISO-45001-2018-Infrigidate.pdf" target="_blank" rel="noopener">View certificate (PDF) ↗</a></div></article></div>
   </div></section>
   <section class="frost"><div class="wrap cols2">
     <div class="block"><div class="eyebrow">Digital project management</div><h2>Every PO, work order and bill tracked in-house.</h2>
@@ -868,12 +1320,79 @@ nav.main a{padding-inline:8px;font-size:.9rem}
   </div></section>
 </div>
 
+<!-- ===================== SUSTAINABILITY ===================== -->
+<div class="page" data-page="sustainability" hidden>
+  <div class="phero phero-green"><div class="bg" style="background-image:url(img/envalior-plant.jpg)"></div><div class="wrap">
+    <div class="crumbs"><a href="#home">Home</a> / Sustainability &amp; CSR</div>
+    <div class="trlogo trlogo-light" role="img" aria-label="1 TRee: One TR. One Tree. Climate Responsibility for the Built Environment"><span class="trw"><span class="tr1">1</span> TR<span class="ee">ee<svg class="sprout" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 38V20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M20 22C20 11 27 4 38 3c0 11-7 18-18 19z" fill="currentColor"/><path d="M20 26C20 18 14 12 5 12c0 8 6 14 15 14z" fill="currentColor" opacity=".75"/></svg></span></span><span class="trt">One TR. One Tree.</span><span class="trs">Climate Responsibility for the Built Environment</span></div>
+    <div class="eyebrow">Sustainability &amp; CSR</div><h1>Every tonne of cooling, balanced with trees.</h1>
+    <p class="lede">Cooling uses energy, and the equipment behind it carries embodied carbon. We take responsibility for both on the projects we deliver.</p>
+  </div></div>
+  <section><div class="wrap cols2">
+    <div class="block"><div class="eyebrow">Our tree commitment</div><h2>One tree for every TR we install.</h2>
+      <p class="lede">For every ton of refrigeration (TR) of cooling capacity we install, Infrigidate plants a tree. We also plant additional trees to offset the embodied carbon of the installed system: the emissions from manufacturing its equipment, ductwork and piping.</p>
+      <p class="lede">The programme began with our projects for Envalior India and Jotun India, and now applies to every HVAC system we deliver.</p></div>
+    <ol class="csr">
+      <li><span class="n">1 TR</span><b>One tree</b><span>for each ton of refrigeration installed</span></li>
+      <li><span class="n">+ CO₂e</span><b>Equivalent trees</b><span>for the system's embodied carbon</span></li>
+      <li><span class="n">140 TR</span><b>Offset so far</b><span>of installed cooling balanced with trees, from Envalior and Jotun onwards</span></li>
+    </ol>
+  </div></section>
+  <section class="frost"><div class="wrap cols2">
+    <div class="block"><div class="eyebrow">Efficiency by design</div><h2>The cleanest kilowatt is the one a building never uses.</h2>
+      <p class="lede">Most of a system's carbon comes from running it. Our design and commissioning choices aim at lifecycle energy, not just first cost.</p></div>
+    <ul class="checks">
+      <li>Equipment selected on lifecycle cost and part-load efficiency</li>
+      <li>Simulation to confirm conditions and avoid oversized plant</li>
+      <li>Energy management (EMS &amp; IoT) to monitor and cut consumption</li>
+      <li>Thorough commissioning so systems run as designed</li>
+      <li>Retrofit studies and energy audits for existing facilities</li></ul>
+  </div></section>
+  <section><div class="wrap">
+    <a class="isoband" href="#quality"><span class="isolabel">Certified management systems</span>
+      <span class="isob isog"><b>ISO 14001</b><small>Environment</small></span><span class="isob"><b>ISO 45001</b><small>Health &amp; safety</small></span><span class="isob"><b>ISO 9001</b><small>Quality</small></span>
+      <span class="more arrow">Quality &amp; safety </span></a>
+  </div></section>
+</div>
+
+<!-- ===================== INSIGHTS ===================== -->
+<div class="page" data-page="insights" hidden>
+  <div class="phero"><div class="bg" style="background-image:url(img/knorr-cfd.jpg)"></div><div class="wrap">
+    <div class="crumbs"><a href="#home">Home</a> / Insights</div>
+    <div class="eyebrow">Insights</div><h1>News, tools and resources.</h1>
+    <p class="lede">Company updates, free engineering calculators and documents for consultants and clients.</p>
+  </div></div>
+  <section id="news"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">News &amp; outreach</div><h2>Latest from Infrigidate.</h2></div>
+    <div id="insNews"></div>
+  </div></section>
+  <section class="frost"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Engineering tools</div><h2>Free calculators for early-stage checks.</h2></div>
+    <div class="tiles">
+      <a class="tile" href="#tools-duct"><h3>Duct sizing</h3><p>Round and rectangular sizes by equal friction or velocity.</p><span class="more arrow">Open </span></a>
+      <a class="tile" href="#tools-pipe"><h3>Pipe sizing</h3><p>Chilled and condenser water pipe selection from TR or flow.</p><span class="more arrow">Open </span></a>
+      <a class="tile" href="#tools-load"><h3>Heat load estimate</h3><p>Rough tonnage with fresh air per ASHRAE 62.1.</p><span class="more arrow">Open </span></a>
+    </div>
+  </div></section>
+  <section id="downloads"><div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Downloads</div><h2>Certificates and documents.</h2>
+      <p class="lede">Open our ISO certificates directly. For the company profile, send a request and our team will email you the current version.</p></div>
+    <div class="dls">
+      <a class="dl" href="#contact"><span class="dlic">PDF</span><span><b>Company profile</b><small>Capabilities, project references and certifications</small></span><span class="more arrow">Request </span></a>
+      <a class="dl" href="docs/ISO-9001-2015-Infrigidate.pdf" target="_blank" rel="noopener"><span class="dlic">PDF</span><span><b>ISO 9001:2015 certificate</b><small>Quality Management System · Cert. no. 26UQLJ28 · valid to Aug 2029</small></span><span class="more arrow">Open </span></a>
+      <a class="dl" href="docs/ISO-14001-2015-Infrigidate.pdf" target="_blank" rel="noopener"><span class="dlic">PDF</span><span><b>ISO 14001:2015 certificate</b><small>Environmental Management System · Cert. no. 26UELM26 · valid to Aug 2029</small></span><span class="more arrow">Open </span></a>
+      <a class="dl" href="docs/ISO-45001-2018-Infrigidate.pdf" target="_blank" rel="noopener"><span class="dlic">PDF</span><span><b>ISO 45001:2018 certificate</b><small>Occupational Health &amp; Safety · Cert. no. 26UOLY36 · valid to Aug 2029</small></span><span class="more arrow">Open </span></a>
+      <a class="dl" href="#appreciation"><span class="dlic">JPG</span><span><b>Client appreciation letters</b><small>Cilicant, Fresenius Kabi, Knorr-Bremse, Rajaram</small></span><span class="more arrow">View </span></a>
+    </div>
+  </div></section>
+</div>
+
 <!-- ===================== CAREERS ===================== -->
 <div class="page" data-page="careers" hidden>
   <div class="phero"><div class="bg" style="background-image:url(img/cilicant-site.jpg)"></div><div class="wrap">
     <div class="crumbs"><a href="#home">Home</a> / Careers</div>
     <div class="eyebrow">Careers</div><h1>Build the systems critical facilities depend on.</h1>
-    <p class="lede">Join a team of 25+ engineers who own outcomes from drawing to handover.</p>
+    <p class="lede">Join an engineering team that owns outcomes from drawing to handover.</p>
   </div></div>
   <section><div class="wrap cols2">
     <div class="block"><div class="eyebrow">Life at Infrigidate</div><h2>Learn fast. Own your site.</h2>
@@ -902,7 +1421,7 @@ nav.main a{padding-inline:8px;font-size:.9rem}
 
 <!-- ===================== CONTACT ===================== -->
 <div class="page" data-page="contact" hidden>
-  <div class="phero"><div class="bg" style="background-image:url(img/knorr-vrf1.jpg)"></div><div class="wrap">
+  <div class="phero"><div class="bg" style="background-image:url(img/knorr-plant.jpg)"></div><div class="wrap">
     <div class="crumbs"><a href="#home">Home</a> / Contact</div>
     <div class="eyebrow">Contact us</div><h1>Talk to our engineers.</h1>
     <p class="lede">Share your project brief, drawings or BOQ and our engineers will get back to you.</p>
@@ -914,6 +1433,7 @@ nav.main a{padding-inline:8px;font-size:.9rem}
         <div class="office"><div class="tag">Indore region</div><address>Office 128, First Floor, Medi-Caps Business Park, Pithampur, Madhya Pradesh</address></div>
         <div class="office"><div class="tag">Phone &amp; email</div>
           <div class="copyrow"><span>+91 95953 73634</span><button type="button" data-copy="+91 95953 73634">Copy</button></div>
+          <div class="copyrow"><span>+91 88050 01384</span><button type="button" data-copy="+91 88050 01384">Copy</button></div>
           <div class="copyrow"><span>sales.pune@infrigidate.in</span><button type="button" data-copy="sales.pune@infrigidate.in">Copy</button></div></div>
       </div>
     </div>
@@ -929,6 +1449,9 @@ nav.main a{padding-inline:8px;font-size:.9rem}
       <label>Email *<input id="e-email" name="email" type="email" required></label>
       <label>Enquiry type<select id="e-type" name="Enquiry type"><option>New project / proposal</option><option>AMC / service</option><option>Audit / energy study</option><option>Vendor registration</option></select></label>
       <label>Industry<select id="e-ind" name="Industry"><option>Pharmaceutical &amp; life sciences</option><option>Healthcare &amp; hospitals</option><option>Cleanrooms &amp; controlled environments</option><option>Industrial &amp; manufacturing</option><option>Warehousing &amp; logistics</option><option>Commercial &amp; institutional</option></select></label>
+      <label>Compliance target<select id="e-comp" name="Compliance target"><option>WHO-GMP</option><option>EU-GMP / MHRA</option><option>USFDA</option><option>NABH</option><option>ISO 14644 cleanroom class</option><option>Comfort / not regulated</option><option>Not sure yet</option></select></label>
+      <label>Timeline<select id="e-time" name="Timeline"><option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Budgeting / planning stage</option></select></label>
+      <label class="full">Preferred next step<select id="e-next" name="Preferred next step"><option>Call me back</option><option>Arrange a site visit</option><option>Email me a project questionnaire</option></select></label>
       <label class="full">Project details<textarea id="e-msg" name="Project details" placeholder="Location, area (sq ft), design conditions, timeline"></textarea></label>
       <label class="full">Attach drawings or BOQ<input id="e-file" name="Attachment" type="file"></label>
       <div class="full"><button class="btn btn-dark arrow" type="submit">Send enquiry</button></div>
@@ -952,11 +1475,11 @@ nav.main a{padding-inline:8px;font-size:.9rem}
     <div><a class="logo" href="#home"><img src="img/infrigidate-logo-white.png" alt="Infrigidate"></a>
       <p>HVAC &amp; integrated MEP contracting company delivering technically complex, compliance-driven projects across India.</p></div>
     <div><h4>Solutions</h4><ul><li><a href="#solutions">HVAC Systems</a></li><li><a href="#solutions">Cleanroom Solutions</a></li><li><a href="#solutions">Electrical Solutions</a></li><li><a href="#solutions">BMS &amp; Controls</a></li><li><a href="#solutions">Energy Management</a></li></ul></div>
-    <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#projects">Projects</a></li><li><a href="#quality">Quality &amp; Safety</a></li><li><a href="#appreciation">Client Appreciation</a></li><li><a href="#tools">Engineering Tools</a></li><li><a href="#careers">Careers</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#projects">Projects</a></li><li><a href="#quality">Quality &amp; Safety</a></li><li><a href="#sustainability">Sustainability &amp; CSR</a></li><li><a href="#appreciation">Client Appreciation</a></li><li><a href="#insights">Insights &amp; Downloads</a></li><li><a href="#tools">Engineering Tools</a></li><li><a href="#careers">Careers</a></li></ul></div>
     <div><h4>Offices</h4><ul>
       <li>Office 20, City Vista B, Fountain Road, Kharadi, Pune 411014</li>
       <li>Office 128, Medi-Caps Business Park, Pithampur, MP</li>
-      <li>+91 95953 73634</li><li>sales.pune@infrigidate.in</li><li><a href="https://www.linkedin.com/company/infrigidate" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul></div>
+      <li>+91 95953 73634</li><li>+91 88050 01384</li><li>sales.pune@infrigidate.in</li><li><a href="https://www.linkedin.com/company/infrigidate" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul></div>
   </div>
   <div class="bottom"><span>© <span id="yr">2026</span> Infrigidate Engineers India Pvt. Ltd. · CIN U22209PN2024PTC230478</span><span class="isoline">ISO 9001 · ISO 14001 · ISO 45001 certified</span><span>Privacy Policy · Terms of Use</span></div>
 </div></footer>
@@ -1054,9 +1577,10 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 function projCard(p){return `<a class="pcard" href="#project-${p.id}"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.c)} facility" loading="lazy"><div class="b"><div class="sec">${esc(p.sec)} · ${esc(p.loc.split(',')[0])}</div><h3>${esc(p.c)}</h3><p>${esc(p.type)}</p><div class="spec">${p.crit.map(c=>`<span>${esc(c)}</span>`).join('')}</div></div></a>`}
 
 $('#homeSolutions').innerHTML=SOL.map(s=>`<a class="tile" href="#solutions"><span class="ic">${ICON[s.id]}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p><span class="more">Learn more →</span></a>`).join('');
-$('#homeInds').innerHTML=IND.map(i=>`<a class="ind" href="#industries"><img src="img/${i.img}.jpg" alt="" loading="lazy"><div><h3>${esc(i.t)}</h3><small>${esc(i.s)}</small></div></a>`).join('');
+const INDSLUG=['pharma', 'healthcare', 'cleanroom', 'industrial', 'warehousing', 'commercial'];
+$('#homeInds').innerHTML=IND.map((i,n)=>`<a class="ind" href="#ind-${INDSLUG[n]}"><img src="img/${i.img}.jpg" alt="" loading="lazy"><div><h3>${esc(i.t)}</h3><small>${esc(i.s)}</small></div></a>`).join('');
 const lifeHtml=LIFE.map(l=>`<li><b>${esc(l[0])}</b><span>${esc(l[1])}</span></li>`).join('');
-$('#homeLife').innerHTML=lifeHtml;$('#capLife').innerHTML=lifeHtml;
+$('#capLife').innerHTML=lifeHtml;
 $('#homeProjs').innerHTML=['jotun','rajaram','knorr'].map(id=>projCard(PROJ.find(p=>p.id===id))).join('');
 $('#homeWhy').innerHTML=WHY.map(w=>`<div><b>${esc(w[0])}</b><span>${esc(w[1])}</span></div>`).join('');
 $('#aboutFocus').innerHTML=FOCUS.map(w=>`<div><b>${esc(w[0])}</b></div>`).join('');
@@ -1066,7 +1590,7 @@ $('#logoGrid').innerHTML=LOGOS.map(l=>`<div><img src="img/logo-${l}.png" alt="${
 
 $('#solList').innerHTML=SOL.map((s,i)=>`<div class="sol"><div class="block"><span class="num">SOLUTION ${String(i+1).padStart(2,'0')}</span><span class="ic" style="width:48px;color:var(--brand)">${ICON[s.id]}</span><h2 style="font-size:1.9rem">${esc(s.t)}</h2><p class="lede">${esc(s.d)}</p></div><div class="block"><img src="img/${s.img}.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:16/8;object-fit:cover"><div class="chips">${s.items.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div></div>`).join('');
 $('#capList').innerHTML=CAP.map(c=>`<div class="sol"><div class="block"><h2 style="font-size:1.8rem">${esc(c.t)}</h2></div><ul class="checks">${c.l.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
-$('#indList').innerHTML=IND.map(i=>{const ps=i.p.map(id=>PROJ.find(p=>p.id===id));return `<div class="sol"><div class="block"><img src="img/${i.img}.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"></div><div class="block"><div class="eyebrow">${esc(i.s)}</div><h2 style="font-size:1.9rem">${esc(i.t)}</h2><p class="lede">${esc(i.body)}</p>${ps.length?`<div class="chips">${ps.map(p=>`<a href="#project-${p.id}" style="text-decoration:none"><span>Case study: ${esc(p.c)} →</span></a>`).join('')}</div>`:''}</div></div>`}).join('');
+$('#indList').innerHTML=IND.map((i,n)=>{const ps=i.p.map(id=>PROJ.find(p=>p.id===id));return `<div class="sol" id="ind-${INDSLUG[n]}"><div class="block"><img src="img/${i.img}.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover"></div><div class="block"><div class="eyebrow">${esc(i.s)}</div><h2 style="font-size:1.9rem">${esc(i.t)}</h2><p class="lede">${esc(i.body)}</p>${ps.length?`<div class="chips">${ps.map(p=>`<a href="#project-${p.id}" style="text-decoration:none"><span>Case study: ${esc(p.c)} →</span></a>`).join('')}</div>`:''}</div></div>`}).join('');
 
 // project filters
 const secs=['All',...new Set(PROJ.map(p=>p.sec))];let cur='All';
@@ -1095,16 +1619,17 @@ function detail(p){
 const nav=$('#nav');
 function route(){
  let h=(location.hash||'#home').slice(1)||'home',page=h;
- if(h==='appreciation')page='home';
  if(h==='thanks'||h==='thanks-careers'){page=h==='thanks'?'contact':'careers';setTimeout(()=>{const f=$(h==='thanks'?'#enqForm':'#careerForm');if(!f)return;f.querySelector('.formmsg')?.remove();const d=document.createElement('div');d.className='formmsg';d.textContent=h==='thanks'?'Thank you. Your enquiry has reached our sales team, and we will reply within one working day.':'Thank you. Your application has reached our team, and we will be in touch if there is a suitable role.';f.prepend(d);f.scrollIntoView({block:'start'})},50)}
  if(h.startsWith('tools')){page='tools';window.setTool&&setTool(h.split('-')[1]||'duct')}
  if(h.startsWith('project-')){const p=PROJ.find(x=>'project-'+x.id===h);if(p){detail(p);page='project'}else page='projects'}
+ let target=null;
+ if(!document.querySelector(`.page[data-page="${page}"]`)){const el=document.getElementById(h);const pg=el&&el.closest('.page');if(pg){page=pg.dataset.page;target=el}}
  if(!document.querySelector(`.page[data-page="${page}"]`))page='home';
  document.querySelectorAll('.page').forEach(el=>{const on=el.dataset.page===page;el.hidden=!on;if(on){el.classList.remove('fade');void el.offsetWidth;el.classList.add('fade')}});
  const act=page==='project'?'projects':page;
  nav.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href')==='#'+act)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
  nav.classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
- if(h==='appreciation'){const t=document.getElementById('appreciation');if(t){setTimeout(()=>t.scrollIntoView(),0);return}}
+ if(target){setTimeout(()=>target.scrollIntoView(),0);return}
  window.scrollTo(0,0);
 }
 
@@ -1223,7 +1748,7 @@ function route(){
   {img:'letter3',client:'Rajaram Consumer Care',project:'Pharmaceutical QC and pharma area',scope:'Design and build of HVAC system',date:'14 May 2025'}
  ];
  const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
- document.querySelectorAll('[data-letters]').forEach(g=>{g.innerHTML=L.map((l,i)=>`<button type="button" class="lcard" data-li="${i}" aria-label="View appreciation letter from ${esc(l.client)}"><span class="doc"><img src="img/${l.img}.jpg" alt="" loading="lazy"></span><span class="b"><span class="cl">${esc(l.client)}</span><span class="pr">${esc(l.project)}</span><span class="sc">${esc(l.scope)}</span><time>${l.date}</time></span></button>`).join('')});
+ document.querySelectorAll('[data-letters]').forEach(g=>{const card=(l,i,dup)=>`<button type="button" class="lcard" data-li="${i}" aria-label="View appreciation letter from ${esc(l.client)}"><span class="doc"><img src="img/${l.img}.jpg" alt="" loading="lazy"></span><span class="b"><span class="cl">${esc(l.client)}</span><span class="pr">${esc(l.project)}</span><span class="sc">${esc(l.scope)}</span><time>${l.date}</time></span></button>`;const html=L.map((l,i)=>card(l,i)).join('');g.innerHTML=g.dataset.letters==='slide'?html+html.replace(/class="lcard"/g,'class="lcard" tabindex="-1" aria-hidden="true"'):html});
  const d=document.getElementById('lbox'),img=document.getElementById('lboxImg'),cap=document.getElementById('lboxCap');let cur=0;
  function show(i){cur=(i+L.length)%L.length;const l=L[cur];img.src='img/'+l.img+'.jpg';img.alt='Appreciation letter from '+l.client+', '+l.date;cap.textContent=l.client+' · '+l.date;d.querySelector('.lbox-body').scrollTop=0}
  document.addEventListener('click',e=>{const c=e.target.closest('.lcard');if(!c)return;show(+c.dataset.li);if(d.showModal){d.showModal()}else{d.setAttribute('open','')}});
@@ -1232,6 +1757,56 @@ function route(){
  document.getElementById('lboxNext').addEventListener('click',()=>show(cur+1));
  d.addEventListener('click',e=>{if(e.target===d)d.close()});
  d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+})();
+(function(){const n=document.querySelector('[data-page="home"] .nwrap');const t=document.getElementById('insNews');if(n&&t)t.innerHTML=n.outerHTML})();
+document.querySelectorAll('.dd').forEach(d=>{d.querySelectorAll('a').forEach(x=>x.addEventListener('click',()=>{d.classList.add('closed');document.activeElement&&document.activeElement.blur()}));d.addEventListener('mouseleave',()=>d.classList.remove('closed'))});
+
+// ===== Home: hero slider + counters =====
+(function(){
+ const hs=document.querySelector('.hs');if(!hs)return;
+ const sl=[...hs.querySelectorAll('.slide')],dots=[...hs.querySelectorAll('.hs-dots button')];let cur=0,timer=null;
+ const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function go(n){cur=(n+sl.length)%sl.length;sl.forEach((s,i)=>{const on=i===cur;s.classList.toggle('is-on',on);s.setAttribute('aria-hidden',on?'false':'true');s.querySelectorAll('a').forEach(a=>a.tabIndex=on?0:-1)});dots.forEach((d,i)=>{d.classList.toggle('on',i===cur);d.setAttribute('aria-selected',i===cur)})}
+ function play(){if(reduce)return;stop();timer=setInterval(()=>go(cur+1),6500)}
+ function stop(){timer&&clearInterval(timer);timer=null}
+ hs.querySelectorAll('[data-hs]').forEach(b=>b.addEventListener('click',()=>{go(cur+ +b.dataset.hs);play()}));
+ dots.forEach(d=>d.addEventListener('click',()=>{go(+d.dataset.go);play()}));
+ hs.addEventListener('mouseenter',stop);hs.addEventListener('mouseleave',play);
+ hs.addEventListener('focusin',stop);hs.addEventListener('focusout',play);
+ let x0=null;hs.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+ hs.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(cur+(dx<0?1:-1));play()}x0=null});
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():play());
+ play();
+ // counters: final values are in the HTML; animate up from zero when first seen
+ const cs=[...document.querySelectorAll('.cnt')];
+ if(!reduce&&'IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,to=+el.dataset.to,t0=performance.now(),d=1400;
+   (function f(t){const k=Math.min(1,(t-t0)/d),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=v;if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+  cs.forEach(c=>io.observe(c));
+ }
+})();
+
+// ===== Appreciation letters carousel =====
+(function(){
+ const car=document.querySelector('.lcar');if(!car)return;
+ const tr=car.querySelector('.ltrack2'),cards=[...tr.children],dotsBox=document.querySelector('.lc-dots');
+ const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let idx=0,timer=null;
+ const per=()=>innerWidth>1000?3:innerWidth>640?2:1;
+ const maxI=()=>Math.max(0,cards.length-per());
+ function dots(){dotsBox.innerHTML='';for(let i=0;i<=maxI();i++){const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show letters from position '+(i+1));b.className=i===idx?'on':'';b.addEventListener('click',()=>{go(i);play()});dotsBox.appendChild(b)}}
+ function go(i){const m=maxI();idx=i>m?0:i<0?m:i;const c=cards[0];const step=c.getBoundingClientRect().width+parseFloat(getComputedStyle(tr).columnGap||20);tr.style.transform=`translateX(${-idx*step}px)`;
+  cards.forEach((c,n)=>{const vis=n>=idx&&n<idx+per();c.tabIndex=vis?0:-1;c.setAttribute('aria-hidden',vis?'false':'true')});
+  [...dotsBox.children].forEach((d,n)=>d.className=n===idx?'on':'')}
+ function play(){if(reduce)return;stop();timer=setInterval(()=>go(idx+1),4500)}
+ function stop(){timer&&clearInterval(timer);timer=null}
+ car.querySelectorAll('[data-lc]').forEach(b=>b.addEventListener('click',()=>{go(idx+ +b.dataset.lc);play()}));
+ car.addEventListener('mouseenter',stop);car.addEventListener('mouseleave',play);car.addEventListener('focusin',stop);car.addEventListener('focusout',play);
+ let x0=null;car.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+ car.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(idx+(dx<0?1:-1));play()}x0=null});
+ let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(idx>maxI())idx=maxI();dots();go(idx)},150)});
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():play());
+ dots();go(0);play();
 })();
 window.addEventListener('hashchange',route);route();
 $('#burger').addEventListener('click',()=>{const o=nav.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)});
